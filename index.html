@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f2340">
+<title>LAS Team</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.45; color: #0f2340; background: #ffffff; -webkit-text-size-adjust: 100%;
+  }
+  .serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; font-weight: 400; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #c9a227; outline-offset: 2px; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: 600px; margin: 0 auto; }
+
+  .bar { background: #0f2340; color: #ffffff; border-bottom: 3px solid #c9a227; position: sticky; top: 0; z-index: 5; }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 16px; min-height: 56px; }
+  .bar .who { font-size: 14px; line-height: 1.25; overflow: hidden; }
+  .bar .who b { display: block; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: #e6c861; font-weight: 700; }
+  .bar .right { display: flex; gap: 8px; align-items: center; flex: none; }
+  .chip { font-size: 14px; font-weight: 600; background: transparent; color: #ffffff; border: 1.5px solid #ffffff; border-radius: 20px; padding: 6px 12px; min-height: 36px; }
+
+  .center { text-align: center; padding: 40px 24px 56px; }
+  .center img { width: 210px; max-width: 66%; height: auto; display: block; margin: 0 auto 22px; }
+  .center h1 { font-size: 26px; margin: 0 0 8px; }
+  .center p { font-size: 16px; color: #51606e; margin: 0 0 10px; }
+  #gbtn { display: flex; justify-content: center; min-height: 48px; margin: 22px 0 10px; }
+
+  .pad { padding: 14px 16px 48px; }
+  .back { font-size: 15px; font-weight: 600; background: none; border: 0; padding: 12px 0 4px; display: inline-block; }
+  h1.title { font-size: 26px; line-height: 1.15; margin: 4px 0 2px; overflow-wrap: anywhere; }
+  .sub { font-size: 14px; color: #51606e; margin: 0 0 6px; }
+  .link { background: none; border: 0; padding: 9px 2px; font-size: inherit; text-decoration: underline; color: #0f2340; }
+  .hint { font-size: 13.5px; color: #51606e; margin: 8px 0 0; }
+
+  .pill { display: inline-flex; align-items: center; gap: 7px; border-radius: 20px; padding: 4px 12px; font-size: 14px; font-weight: 700; border: 1.5px solid; }
+  .pill i { width: 9px; height: 9px; border-radius: 50%; background: currentColor; display: inline-block; }
+  .pill.s { color: #1c6b3c; } .pill.a { color: #8a5a00; background: #fff8e1; } .pill.r { color: #a8320a; background: #ffece4; }
+  .tag { display: inline-block; font-size: 12.5px; font-weight: 700; border-radius: 12px; padding: 3px 10px; background: #eef1f5; color: #0f2340; margin: 0 6px 5px 0; }
+  .tag.w { background: #fff1c9; color: #6b4e00; } .tag.g { background: #e3f3e6; color: #1c6b3c; } .tag.r { background: #ffe1d6; color: #7a1d00; }
+
+  .card { display: block; width: 100%; text-align: left; border: 1.5px solid #c9a227; border-radius: 12px; padding: 13px 14px; margin-top: 10px; background: #ffffff; }
+  .card .t { font-weight: 700; font-size: 18px; line-height: 1.25; overflow-wrap: anywhere; }
+  .card .r { font-size: 14px; color: #51606e; margin: 3px 0 8px; }
+  .card.done { border-color: #d5dbe1; background: #f6f8fa; }
+  .amt { font-size: 19px; font-weight: 700; }
+  .bal { font-size: 24px; font-weight: 700; }
+
+  .btn { display: block; width: 100%; text-align: center; border-radius: 10px; padding: 13px 12px; font-size: 16px; font-weight: 700; margin-top: 10px; min-height: 48px; border: 1.5px solid #0f2340; background: #ffffff; color: #0f2340; text-decoration: none; }
+  .btn.navy { background: #0f2340; color: #ffffff; }
+  .btn.gold { background: #c9a227; border-color: #c9a227; color: #0f2340; }
+  .btn.small { display: inline-block; width: auto; min-height: 40px; padding: 8px 14px; font-size: 15px; margin: 8px 8px 0 0; }
+  .btn:disabled { opacity: .55; }
+  .two { display: flex; gap: 10px; } .two .btn { flex: 1; }
+
+  .step { border: 1.5px solid #d5dbe1; border-radius: 12px; margin-top: 10px; overflow: hidden; }
+  .step.open { border-color: #0f2340; }
+  .step > button.sh { display: flex; width: 100%; align-items: center; gap: 12px; padding: 13px 14px; background: #ffffff; border: 0; text-align: left; min-height: 56px; }
+  .step.open > button.sh { background: #eef1f5; }
+  .num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: #0f2340; color: #ffffff; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+  .num.ok { background: #1c6b3c; }
+  .sh .st { flex: 1; font-weight: 700; font-size: 17px; line-height: 1.25; }
+  .sh .st small { display: block; font-weight: 400; font-size: 13px; color: #51606e; }
+  .sh .n { flex: none; font-size: 13px; font-weight: 700; color: #6b4e00; background: #fff1c9; border-radius: 12px; padding: 2px 9px; }
+  .body { padding: 4px 14px 16px; border-top: 1px solid #d5dbe1; }
+
+  .item { border-bottom: 1px solid #d5dbe1; padding: 12px 0; }
+  .item:last-child { border-bottom: 0; }
+  .item .h { font-weight: 700; font-size: 16px; line-height: 1.35; overflow-wrap: anywhere; }
+  .item .m { font-size: 13.5px; color: #51606e; margin: 3px 0 6px; overflow-wrap: anywhere; }
+  .note { background: #eef1f5; border-left: 3px solid #c9a227; border-radius: 6px; padding: 8px 11px; font-size: 14.5px; margin-top: 8px; overflow-wrap: anywhere; white-space: pre-wrap; }
+  .note b { font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: #51606e; display: block; font-weight: 700; }
+  h2 { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 700; margin: 18px 0 4px; padding-bottom: 6px; border-bottom: 1.5px solid #c9a227; }
+  .box { border-radius: 8px; padding: 11px 13px; font-size: 15px; margin-top: 12px; overflow-wrap: anywhere; }
+  .box.good { background: #e3f3e6; border-left: 5px solid #1c6b3c; }
+  .box.warn { background: #fff1c9; border-left: 5px solid #c9a227; }
+  .box.bad { background: #ffe1d6; border-left: 5px solid #a8320a; color: #7a1d00; font-weight: 600; }
+  .box.info { background: #eef1f5; border-left: 5px solid #0f2340; }
+  .check { list-style: none; margin: 8px 0 0; padding: 0; }
+  .check li { padding: 6px 0 6px 30px; position: relative; font-size: 15px; }
+  .check li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid #7d8a97; }
+  .check li.y::before { background: #1c6b3c; border-color: #1c6b3c; }
+  table.t { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 4px; }
+  table.t td { padding: 7px 4px; border-bottom: 1px solid #eef1f5; vertical-align: top; }
+  table.t td.n { text-align: right; white-space: nowrap; }
+
+  label.l { display: block; font-weight: 600; font-size: 15px; margin-top: 16px; }
+  .f, textarea { width: 100%; padding: 11px; background: #ffffff; border: 2px solid #7d8a97; border-radius: 10px; margin-top: 6px; min-height: 48px; }
+  textarea { min-height: 84px; resize: vertical; }
+  .f.bad, textarea.bad { border-color: #a8320a; background: #fff6f2; }
+  .qh { font-size: 13px; color: #51606e; margin-top: 4px; }
+  .foot { margin-top: 28px; font-size: 13px; color: #51606e; text-align: center; }
+  .empty { color: #51606e; font-size: 15px; padding: 8px 0 0; margin: 0; }
+</style>
+</head>
+<body>
+  <header class="bar" id="bar" hidden><div class="wrap">
+    <div class="who"><b>LAS Team</b><span id="whoName"></span></div>
+    <div class="right"><button type="button" class="chip" id="lang"></button><button type="button" class="chip" id="out"></button></div>
+  </div></header>
+  <main id="app"></main>
+
+<script>
+  var API = "https://script.google.com/macros/s/AKfycbyZUGGG2Eh5Xu7nIeeYtdUJssKllxFe9MG55fJbYcIdX7-7V9ekhptAzEOM2fP2SL54/exec";
+  var LOGO = "data:image/jpeg;base64,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";
+
+  var T = {
+    en: {
+      other: "Español", loading: "Loading...", back: "Back", signOut: "Sign out", retry: "Try again", refresh: "Refresh",
+      title: "LAS Team", signP: "Sign in with the Google account Liaison Asset Services has on file for you.",
+      signHint: "If no Google button appears, open this page in Chrome or Safari, not inside WhatsApp.",
+      gFail: "The Google sign-in button could not load. Check the connection, then try again.",
+      NOT_ON_TEAM: "That Google account is not on the LAS team list. Use the account LAS has on file for you, or call the office.",
+      BAD_SIGNIN: "Google sign-in did not work. Please try again.", GOOGLE_DOWN: "Google could not be reached to check the sign-in. Try again in a moment.",
+      NOT_SET_UP: "This page is not set up yet. The office needs to finish the setup.", SIGN_AGAIN: "Please sign in again.",
+      NET: "No connection. Check your signal and try again.", SERVER: "Something went wrong. Please try again.", BUSY: "One moment. Please try again.",
+      NO_PROP: "That property is not on your list.", NOT_READY: "This property's record could not be opened.", NOT_ALLOWED: "Your role does not allow this.",
+      HELD: "This looks like it contains a code or a password. Take it out. Codes are arranged directly and never written here.",
+      BAD_FIELD: "Check the marked box.", SETUP: "The House Wallet setup is not finished for this property. A principal finishes it first.",
+      NO_WALLET: "This property has no active House Wallet.", DUP_BILL: "A bill for this month is already recorded for that name.",
+      CHANGED: "This entry changed while you were reading. Look at it again.", ALREADY: "This is already recorded as paid.", GONE: "This entry is no longer there.",
+      NEEDS_DECISION: "This bill is above its limit and is held. The owner decides first. The owner can also pay it and you record that.",
+      NOT_WALLET_BILL: "LAS pays only bills that are set to be paid from the House Wallet. Record this one as paid by the owner.",
+      NEED_HOW: "Say how LAS looked at it: in person, or from pictures.", NO_DECISIONS: "This plan does not show decisions to the owner.",
+      NO_SUMMARY: "This plan does not get summaries.", NEED_NOTE: "Write a note saying what to correct.",
+      myDay: "My day", today: "Today", noProps: "No property is assigned to you yet. Ask the office.",
+      waitingBtn: "Waiting for approval", waitingMine: "My entries waiting for approval",
+      c_error: "Record cannot be opened", c_open: "{n} open", c_stale: "{n} with no update", c_bills: "{n} to pay", c_over: "{n} over limit", c_decisions: "{n} waiting on owner",
+      c_remind: "Weekly or monthly check due",
+      remReview: "Weekly check: nobody has looked at this property's overall status in {n} days. If it is still right, tap the button. If it changed, post a summary with the new status.",
+      remReview0: "Weekly check: nobody has confirmed this property's overall status yet. If it is right, tap the button. If it changed, post a summary with the new status.",
+      remReviewBtn: "The status is still right",
+      remStatement: "Monthly check: match the House Wallet to the bank's own statement for {m}. Every line on the statement is in the wallet ledger below, and the closing balance agrees. Record anything that is missing first.",
+      remStatementBtn: "Statement matched",
+      c_summary: "Summary due", c_fix: "{n} to fix", c_setup: "Wallet setup", c_missing: "{n} bill not in", c_low: "Wallet low",
+      c_steps: "{n} of the day done", c_closed: "Day closed", c_hold: "Seasonal Hold", c_residence: "Owner in residence",
+      st_Stable: "Stable", st_Attention: "Attention", st_Immediate: "Immediate action",
+      minutes: "Office time this month: {u} of {a} minutes", minutesOver: "Office time this month: {u} minutes, over the {a} this plan allows",
+      doneBy: "Done by {who}", nothingBy: "Nothing today ({who})", markDone: "Done", markNothing: "Nothing today", undo: "Mark again",
+      s_came: "What came in", s_bank: "Bank check", s_bills: "Bills and the house ledger", s_repairs: "Repairs and chores", s_coming: "What is coming",
+      s_fix: "Fix list", s_summary: "Summary for the owner", s_close: "Close the day",
+      h_came: "Messages, owner answers, the time clock", h_bank: "The House Wallet against the bank", h_bills: "What to pay, and what the owner pays", h_repairs: "In person, or from pictures",
+      h_coming: "Visits, maintenance, projects", h_fix: "What to correct in the record", h_summary: "What the owner reads", h_close: "Note for tomorrow",
+      handoff: "Note left by {who} on {d}", noHandoff: "No note was left yesterday.",
+      msgRemind: "Read today's messages from house staff, contractors and the owner before you go on.",
+      calls: "The owner asked for a call", answers: "The owner did this on the dashboard", noAnswers: "Nothing from the owner in the last 7 days.",
+      onClock: "On the clock now", nobodyOn: "Nobody is on the clock here.", desk: "desk", since: "since {t}",
+      noshow: "Not clocked in today", noshowP: "{name} is expected on {days} and has not clocked in.",
+      review: "Time clock: to review", clockOff: "The time clock could not be read.",
+      setupT: "House Wallet setup", setup1: "The owner has activated the House Wallet", setup2: "Expected bills with an NTE: {n}", setup3: "The owner approved the bill list on their dashboard",
+      setup3c: "The bill list changed: the owner approves it again", setup4: "First bank check recorded", setupP: "Daily management starts when all four are done.",
+      balRec: "Balance by LAS records", bankOk: "Matched to the bank on {d}", bankNo: "Bank check on {d} does not match", bankNever: "Never matched to the bank",
+      ask_: "Nothing has moved since the last bank check. You can close this step.", ask_paid: "A payment or a deposit was recorded since the last bank check. Look at the bank and record the balance.",
+      ask_due: "A wallet bill is due. Look at the bank before paying, and record the balance.", ask_week: "It has been a week since the last bank check. Record the balance.",
+      ask_first: "No bank check has been recorded yet.",
+      low: "{c} balance {a} is below the {t} the owner wants kept. Ask the owner to top up.",
+      bBank: "Record the bank balance", bDeposit: "Record a deposit or withdrawal", ledger: "Latest lines", balAfter: "balance {a}",
+      inL: "Deposit", outL: "Taken out by the owner", byOwner: "paid by the owner",
+      missingT: "Expected and not recorded", missingP: "{name}: usually due {d}", late: "late", bRecord: "Record this bill",
+      toPay: "To pay", noBills: "No bills are waiting.", wPays: "From the House Wallet", oPays: "The owner pays", due: "Due {d}", pastDue: "Past due",
+      overHold: "Above its limit of {a}: held, the owner decides", overPay: "Above its limit of {a}: pay and report", overInfo: "Above its limit of {a}", noLimit: "No limit set: the owner decides",
+      high: "Higher than usual (about {a})", decision: "Decision {s}", bPaid: "Record as paid", bAddBill: "Add a bill", bDecision: "Ask the owner to decide",
+      comingBills: "Expected next", about: "about {a}", paidLately: "Paid lately", noProof: "No receipt", paidTwice: "Paid twice?", byLas: "LAS", byOwner2: "Owner",
+      openItems: "Open", noItems: "No open items.", bUpdate: "Update", bAddItem: "Add an item", doneLately: "Finished lately", stale: "No update in {n} days",
+      nextStep: "Next step", proof: "Photos or proof", open: "Open", noComing: "Nothing coming up.", noFix: "Nothing to fix.", heldT: "Held back from the owner",
+      sumDue: "A summary is due", sumNot: "No summary is due.", sumLast: "Last posted {d}.", sumNever: "None posted yet.", sumNow: "What the owner sees now",
+      b_happened: "What happened", b_did: "What we did", b_attention: "What needs attention", b_need: "What we need from you", bWrite: "Write a summary", sumHist: "Posted before",
+      noHist: "The Portfolio has no Summaries tab, so past summaries are not kept. The office can add it with Prepare a Portfolio.",
+      closeP: "Leave a note for whoever opens this property next. Then clock out on the time clock.", closeL: "Note for tomorrow (optional)", bClose: "Close the day", closed: "Closed by {who}.",
+      qWaiting: "Waiting here for approval", qBy: "{who}, {t}",
+      f_bank: "Bank balance", f_deposit: "Deposit or withdrawal", f_bill: "Bill", f_paid: "Record as paid", f_decision: "Decision for the owner", f_act_add: "New item", f_act_update: "Update the item", f_summary: "Summary for the owner",
+      l_date: "Date", l_balance: "Balance the bank shows", l_cur: "Currency", l_note: "Note (optional)", l_amount: "Amount", l_kindD: "What happened", o_in: "The owner put money in", o_out: "The owner took money out",
+      l_bill: "Which bill", o_other: "Another bill, not on the list", l_desc: "Description", l_payee: "Paid to", l_category: "Category", l_due: "Due date", l_from: "Who pays", o_wallet: "LAS, from the House Wallet", o_owner: "The owner",
+      l_ref: "Reference (optional)", h_ref: "A project or decision ID, such as P-001.", l_notes: "Note the owner will see (optional)",
+      l_paidDate: "Date it was paid", l_by: "Who paid it", o_las: "LAS, from the House Wallet", o_ownerOwn: "The owner, from their own funds", o_ownerWallet: "The owner, from the House Wallet account",
+      l_proof: "Link to the receipt", h_proof: "Starts with https://. A payment by LAS needs one.", l_wAmount: "Amount the bank took (only if in another currency)", h_wAmount: "As the bank shows it. Nothing is converted here.", l_wCur: "Currency of that amount",
+      l_issue: "What the owner must decide", l_rec: "Our recommendation", l_amountO: "Amount (optional)",
+      l_summary: "What it is", l_type: "Type", l_who: "Who has it", l_priority: "Priority", l_status: "Status", l_next: "Next step", l_evidence: "Link to the photo folder, or what the proof is",
+      l_how: "How LAS looked at it", o_none: "Not looked at yet", o_person: "In person", o_pictures: "From pictures sent to us",
+      l_kind: "Kind of summary", l_statusS: "Overall status", h_block: "Plain words, two or three sentences. Left blank, the owner sees a short line saying nothing is needed.",
+      choose: "Choose...", save: "Save", send: "Send for approval", post: "Post to the owner", saving: "Saving...", sure: "The owner sees this as soon as it is saved.",
+      sureQ: "This waits for a principal. Nothing is posted until it is approved.", again: "Yes, it is a second bill for that month",
+      saved: "Saved.", queued: "Sent for approval. Nothing is posted until a principal approves it.",
+      n_MATCH: "The bank matches LAS records.", n_NO_MATCH: "The bank does NOT match LAS records. The principals were emailed. Record what is missing: a deposit, a withdrawal, a bank fee or a payment.",
+      n_HELD_FOR_OWNER: "Held, not to be paid yet: no approved limit covers it. Decision {x} was opened for the owner.", n_WHY_ITEM: "A 'find out why' item was added to repairs and chores.",
+      n_PAY_AND_REPORT: "Above its limit. The owner chose pay and report: pay it, and tell the owner in a summary today.", n_OVER_NTE: "Above its limit.", n_NOT_COVERED: "Held. No limit the owner approved covers this bill, and its reference is not an approved decision.", n_OVER_NO_DECISION: "Above its limit, and the owner decision could not be created. Ask the owner yourself.",
+      n_HIGH: "Higher than usual (about {x}). Worth a look.", n_NO_PROOF: "No receipt was attached. Add the receipt link in the Portfolio.", n_DECISION: "Decision {x} is now waiting on the owner.",
+      n_SKIP_TYPE: "The Portfolio's Type dropdown did not accept that type, so it was left blank.", n_SKIP_PRIORITY: "The Priority dropdown did not accept that priority, so it was left blank.", n_SKIP_CATEGORY: "The Category dropdown did not accept that category, so it was left blank.",
+      n_NO_HISTORY: "Posted. The Portfolio has no Summaries tab, so it was not added to the history.", n_NO_LAST_UPDATE: "Saved. The Portfolio has no Last Update column yet.",
+      queueT: "Waiting for approval", queueNone: "Nothing is waiting.", recent: "Decided lately", approve: "Approve and post", ret: "Return with a note", retL: "What should be corrected",
+      approved: "Approved and posted.", returned: "Returned.", already: "This was already decided.", editS: "You can correct the words before approving.",
+      k_bank: "Bank balance", k_deposit: "Deposit or withdrawal", k_bill: "Bill", k_paid: "Payment", k_decision: "Owner decision", k_summary: "Summary",
+      q_Waiting: "Waiting", q_Approved: "Approved", q_Returned: "Returned", md: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    es: {
+      other: "English", loading: "Cargando...", back: "Volver", signOut: "Salir", retry: "Intentar de nuevo", refresh: "Actualizar",
+      title: "Equipo LAS", signP: "Entre con la cuenta de Google que Liaison Asset Services tiene registrada para usted.",
+      signHint: "Si no aparece el botón de Google, abra esta página en Chrome o Safari, no dentro de WhatsApp.",
+      gFail: "El botón de Google no pudo cargar. Revise la conexión e intente de nuevo.",
+      NOT_ON_TEAM: "Esa cuenta de Google no está en la lista del equipo LAS. Use la cuenta que LAS tiene registrada para usted, o llame a la oficina.",
+      BAD_SIGNIN: "No se pudo entrar con Google. Intente de nuevo.", GOOGLE_DOWN: "No se pudo consultar a Google para verificar el acceso. Intente de nuevo en un momento.",
+      NOT_SET_UP: "Esta página aún no está lista. La oficina debe terminar la configuración.", SIGN_AGAIN: "Por favor entre de nuevo.",
+      NET: "Sin conexión. Revise su señal e intente de nuevo.", SERVER: "Algo salió mal. Intente de nuevo.", BUSY: "Un momento. Intente de nuevo.",
+      NO_PROP: "Esa propiedad no está en su lista.", NOT_READY: "No se pudo abrir el registro de esta propiedad.", NOT_ALLOWED: "Su rol no permite esto.",
+      HELD: "Esto parece contener un código o una contraseña. Quítelo. Los códigos se coordinan directamente y nunca se escriben aquí.",
+      BAD_FIELD: "Revise la casilla marcada.", SETUP: "La configuración del House Wallet no está terminada para esta propiedad. Un principal la termina primero.",
+      NO_WALLET: "Esta propiedad no tiene un House Wallet activo.", DUP_BILL: "Ya hay una cuenta registrada este mes con ese nombre.",
+      CHANGED: "Este registro cambió mientras leía. Revíselo de nuevo.", ALREADY: "Esto ya está registrado como pagado.", GONE: "Este registro ya no está.",
+      NEEDS_DECISION: "Esta cuenta está por encima de su límite y está detenida. El propietario decide primero. El propietario también puede pagarla y usted lo registra.",
+      NOT_WALLET_BILL: "LAS solo paga cuentas marcadas para pagarse desde el House Wallet. Registre esta como pagada por el propietario.",
+      NEED_HOW: "Indique cómo la revisó LAS: en persona o por fotos.", NO_DECISIONS: "Este plan no muestra decisiones al propietario.",
+      NO_SUMMARY: "Este plan no recibe resúmenes.", NEED_NOTE: "Escriba una nota que diga qué corregir.",
+      myDay: "Mi día", today: "Hoy", noProps: "Aún no tiene ninguna propiedad asignada. Consulte a la oficina.",
+      waitingBtn: "En espera de aprobación", waitingMine: "Mis registros en espera de aprobación",
+      c_error: "No se puede abrir el registro", c_open: "{n} abiertos", c_stale: "{n} sin novedad", c_bills: "{n} por pagar", c_over: "{n} sobre el límite", c_decisions: "{n} en espera del propietario",
+      c_remind: "Revisión semanal o mensual pendiente",
+      remReview: "Revisión semanal: nadie ha revisado el estado general de esta propiedad en {n} días. Si sigue correcto, toque el botón. Si cambió, publique un resumen con el estado nuevo.",
+      remReview0: "Revisión semanal: nadie ha confirmado todavía el estado general de esta propiedad. Si es correcto, toque el botón. Si cambió, publique un resumen con el estado nuevo.",
+      remReviewBtn: "El estado sigue correcto",
+      remStatement: "Revisión mensual: compare el House Wallet con el estado de cuenta del banco de {m}. Cada línea del estado de cuenta está en el libro del wallet abajo, y el saldo final coincide. Registre primero lo que falte.",
+      remStatementBtn: "Estado de cuenta revisado",
+      c_summary: "Resumen pendiente", c_fix: "{n} por corregir", c_setup: "Configurar Wallet", c_missing: "{n} cuenta sin llegar", c_low: "Wallet bajo",
+      c_steps: "{n} pasos del día hechos", c_closed: "Día cerrado", c_hold: "Pausa de temporada", c_residence: "Propietario en la residencia",
+      st_Stable: "Estable", st_Attention: "Atención", st_Immediate: "Acción inmediata",
+      minutes: "Tiempo de oficina este mes: {u} de {a} minutos", minutesOver: "Tiempo de oficina este mes: {u} minutos, más de los {a} que permite este plan",
+      doneBy: "Hecho por {who}", nothingBy: "Nada hoy ({who})", markDone: "Hecho", markNothing: "Nada hoy", undo: "Marcar de nuevo",
+      s_came: "Qué llegó", s_bank: "Revisión del banco", s_bills: "Cuentas y libro de la casa", s_repairs: "Reparaciones y tareas", s_coming: "Qué viene",
+      s_fix: "Por corregir", s_summary: "Resumen para el propietario", s_close: "Cerrar el día",
+      h_came: "Mensajes, respuestas del propietario, el reloj", h_bank: "El House Wallet frente al banco", h_bills: "Qué pagar y qué paga el propietario", h_repairs: "En persona o por fotos",
+      h_coming: "Visitas, mantenimiento, proyectos", h_fix: "Qué corregir en el registro", h_summary: "Lo que lee el propietario", h_close: "Nota para mañana",
+      handoff: "Nota que dejó {who} el {d}", noHandoff: "Ayer no se dejó ninguna nota.",
+      msgRemind: "Lea los mensajes de hoy del personal de la casa, los contratistas y el propietario antes de seguir.",
+      calls: "El propietario pidió una llamada", answers: "El propietario hizo esto en su panel", noAnswers: "Nada del propietario en los últimos 7 días.",
+      onClock: "En turno ahora", nobodyOn: "Nadie está en turno aquí.", desk: "escritorio", since: "desde {t}",
+      noshow: "Sin marcar entrada hoy", noshowP: "A {name} se le espera {days} y no ha marcado entrada.",
+      review: "Reloj: por revisar", clockOff: "No se pudo leer el reloj.",
+      setupT: "Configuración del House Wallet", setup1: "El propietario activó el House Wallet", setup2: "Cuentas esperadas con NTE: {n}", setup3: "El propietario aprobó la lista de cuentas en su panel",
+      setup3c: "La lista de cuentas cambió: el propietario la aprueba de nuevo", setup4: "Primera revisión del banco registrada", setupP: "La gestión diaria empieza cuando las cuatro están hechas.",
+      balRec: "Saldo según los registros de LAS", bankOk: "Conciliado con el banco el {d}", bankNo: "La revisión del {d} no coincide", bankNever: "Nunca conciliado con el banco",
+      ask_: "Nada se ha movido desde la última revisión del banco. Puede cerrar este paso.", ask_paid: "Se registró un pago o un depósito desde la última revisión. Mire el banco y registre el saldo.",
+      ask_due: "Vence una cuenta del Wallet. Mire el banco antes de pagar y registre el saldo.", ask_week: "Ha pasado una semana desde la última revisión del banco. Registre el saldo.",
+      ask_first: "Aún no se ha registrado ninguna revisión del banco.",
+      low: "El saldo en {c} de {a} está por debajo de los {t} que el propietario quiere mantener. Pídale que reponga.",
+      bBank: "Registrar el saldo del banco", bDeposit: "Registrar un depósito o retiro", ledger: "Últimos movimientos", balAfter: "saldo {a}",
+      inL: "Depósito", outL: "Retirado por el propietario", byOwner: "pagado por el propietario",
+      missingT: "Esperadas y sin registrar", missingP: "{name}: normalmente vence el {d}", late: "atrasada", bRecord: "Registrar esta cuenta",
+      toPay: "Por pagar", noBills: "No hay cuentas en espera.", wPays: "Desde el House Wallet", oPays: "Paga el propietario", due: "Vence {d}", pastDue: "Vencida",
+      overHold: "Sobre su límite de {a}: detenida, decide el propietario", overPay: "Sobre su límite de {a}: pagar y avisar", overInfo: "Sobre su límite de {a}", noLimit: "Sin límite fijado: decide el propietario",
+      high: "Más alta de lo habitual (cerca de {a})", decision: "Decisión {s}", bPaid: "Registrar como pagada", bAddBill: "Agregar una cuenta", bDecision: "Pedir decisión al propietario",
+      comingBills: "Se esperan", about: "cerca de {a}", paidLately: "Pagadas recientemente", noProof: "Sin recibo", paidTwice: "¿Pagada dos veces?", byLas: "LAS", byOwner2: "Propietario",
+      openItems: "Abiertos", noItems: "No hay asuntos abiertos.", bUpdate: "Actualizar", bAddItem: "Agregar un asunto", doneLately: "Terminados recientemente", stale: "Sin novedad en {n} días",
+      nextStep: "Siguiente paso", proof: "Fotos o comprobante", open: "Abrir", noComing: "No viene nada.", noFix: "Nada por corregir.", heldT: "Retenido al propietario",
+      sumDue: "Hay un resumen pendiente", sumNot: "No hay resumen pendiente.", sumLast: "Último publicado el {d}.", sumNever: "Aún no se ha publicado ninguno.", sumNow: "Lo que ve el propietario ahora",
+      b_happened: "Qué pasó", b_did: "Qué hicimos", b_attention: "Qué requiere atención", b_need: "Qué necesitamos de usted", bWrite: "Escribir un resumen", sumHist: "Publicados antes",
+      noHist: "El Portafolio no tiene la pestaña Summaries, así que no se guardan los resúmenes anteriores. La oficina puede agregarla con Prepare a Portfolio.",
+      closeP: "Deje una nota para quien abra esta propiedad después. Luego marque su salida en el reloj.", closeL: "Nota para mañana (opcional)", bClose: "Cerrar el día", closed: "Cerrado por {who}.",
+      qWaiting: "Aquí en espera de aprobación", qBy: "{who}, {t}",
+      f_bank: "Saldo del banco", f_deposit: "Depósito o retiro", f_bill: "Cuenta", f_paid: "Registrar como pagada", f_decision: "Decisión para el propietario", f_act_add: "Asunto nuevo", f_act_update: "Actualizar el asunto", f_summary: "Resumen para el propietario",
+      l_date: "Fecha", l_balance: "Saldo que muestra el banco", l_cur: "Moneda", l_note: "Nota (opcional)", l_amount: "Monto", l_kindD: "Qué pasó", o_in: "El propietario depositó", o_out: "El propietario retiró",
+      l_bill: "Cuál cuenta", o_other: "Otra cuenta, fuera de la lista", l_desc: "Descripción", l_payee: "Se paga a", l_category: "Categoría", l_due: "Fecha de vencimiento", l_from: "Quién paga", o_wallet: "LAS, desde el House Wallet", o_owner: "El propietario",
+      l_ref: "Referencia (opcional)", h_ref: "Un ID de proyecto o de decisión, como P-001.", l_notes: "Nota que verá el propietario (opcional)",
+      l_paidDate: "Fecha en que se pagó", l_by: "Quién la pagó", o_las: "LAS, desde el House Wallet", o_ownerOwn: "El propietario, con sus propios fondos", o_ownerWallet: "El propietario, desde la cuenta del House Wallet",
+      l_proof: "Enlace al recibo", h_proof: "Empieza con https://. Un pago de LAS necesita uno.", l_wAmount: "Monto que tomó el banco (solo si es otra moneda)", h_wAmount: "Como lo muestra el banco. Aquí no se convierte nada.", l_wCur: "Moneda de ese monto",
+      l_issue: "Qué debe decidir el propietario", l_rec: "Nuestra recomendación", l_amountO: "Monto (opcional)",
+      l_summary: "Qué es", l_type: "Tipo", l_who: "Quién lo tiene", l_priority: "Prioridad", l_status: "Estado", l_next: "Siguiente paso", l_evidence: "Enlace a la carpeta de fotos, o cuál es el comprobante",
+      l_how: "Cómo lo revisó LAS", o_none: "Aún sin revisar", o_person: "En persona", o_pictures: "Por fotos que nos enviaron",
+      l_kind: "Tipo de resumen", l_statusS: "Estado general", h_block: "Palabras sencillas, dos o tres frases. Si queda en blanco, el propietario ve una línea corta que dice que no se necesita nada.",
+      choose: "Elija...", save: "Guardar", send: "Enviar para aprobación", post: "Publicar al propietario", saving: "Guardando...", sure: "El propietario ve esto en cuanto se guarda.",
+      sureQ: "Esto espera a un principal. No se publica nada hasta que se apruebe.", again: "Sí, es una segunda cuenta de ese mes",
+      saved: "Guardado.", queued: "Enviado para aprobación. No se publica nada hasta que un principal lo apruebe.",
+      n_MATCH: "El banco coincide con los registros de LAS.", n_NO_MATCH: "El banco NO coincide con los registros de LAS. Se avisó a los principales por correo. Registre lo que falta: un depósito, un retiro, un cargo bancario o un pago.",
+      n_HELD_FOR_OWNER: "Detenida, no pagar todavía: ningún límite aprobado la cubre. Se abrió la decisión {x} para el propietario.", n_WHY_ITEM: "Se agregó un asunto para averiguar la causa en reparaciones y tareas.",
+      n_NOT_COVERED: "Detenida. Ningún límite aprobado por el propietario cubre esta cuenta, y su referencia no es una decisión aprobada.", n_PAY_AND_REPORT: "Sobre su límite. El propietario eligió pagar y avisar: páguela y avise al propietario en un resumen hoy.", n_OVER_NTE: "Sobre su límite.", n_OVER_NO_DECISION: "Sobre su límite, y no se pudo crear la decisión del propietario. Consúltele usted.",
+      n_HIGH: "Más alta de lo habitual (cerca de {x}). Vale la pena revisar.", n_NO_PROOF: "No se adjuntó recibo. Agregue el enlace del recibo en el Portafolio.", n_DECISION: "La decisión {x} ya está en espera del propietario.",
+      n_SKIP_TYPE: "La lista de Tipo del Portafolio no aceptó ese tipo, así que quedó en blanco.", n_SKIP_PRIORITY: "La lista de Prioridad no aceptó esa prioridad, así que quedó en blanco.", n_SKIP_CATEGORY: "La lista de Categoría no aceptó esa categoría, así que quedó en blanco.",
+      n_NO_HISTORY: "Publicado. El Portafolio no tiene la pestaña Summaries, así que no se agregó al historial.", n_NO_LAST_UPDATE: "Guardado. El Portafolio aún no tiene la columna Last Update.",
+      queueT: "En espera de aprobación", queueNone: "No hay nada en espera.", recent: "Decididos recientemente", approve: "Aprobar y publicar", ret: "Devolver con una nota", retL: "Qué se debe corregir",
+      approved: "Aprobado y publicado.", returned: "Devuelto.", already: "Esto ya se había decidido.", editS: "Puede corregir las palabras antes de aprobar.",
+      k_bank: "Saldo del banco", k_deposit: "Depósito o retiro", k_bill: "Cuenta", k_paid: "Pago", k_decision: "Decisión del propietario", k_summary: "Resumen",
+      q_Waiting: "En espera", q_Approved: "Aprobado", q_Returned: "Devuelto", md: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+    }
+  };
+  // Words that come from the record in English. They are shown in Spanish to a Spanish reader.
+  var WORDS = {
+    "Check for a leak: read the meter with every tap closed, check the tank float, the toilets and the irrigation, and look for a connection that is not ours.": "Busque una fuga: lea el medidor con todas las llaves cerradas, revise el flotador del tanque, los inodoros y el riego, y busque una conexión que no sea nuestra.",
+    "Check for equipment left running (air conditioning, water heater, pump), compare the meter with the bill, and look for a connection that is not ours.": "Revise si quedó equipo encendido (aire acondicionado, calentador de agua, bomba), compare el medidor con la cuenta y busque una conexión que no sea nuestra.",
+    "Check the tank and lines for a leak, and compare the delivery ticket with the bill.": "Revise el tanque y las líneas por si hay fuga, y compare la boleta de entrega con la cuenta.",
+    "Read the bill for a plan change, a late fee or an added service.": "Lea la cuenta: busque un cambio de plan, un cargo por atraso o un servicio agregado.",
+    "Compare the hours on the time clock with the normal schedule.": "Compare las horas del reloj con el horario normal.",
+    "Compare this bill with the last three and ask the payee what changed.": "Compare esta cuenta con las últimas tres y pregunte al cobrador qué cambió.",
+    "Open": "Abierto", "Watching": "En observación", "Scheduled": "Programado", "Vendor Reported Complete": "El proveedor reporta terminado", "Complete": "Terminado",
+    "Verified Complete": "Verificado y terminado", "Closed": "Cerrado", "Routine": "Rutina", "Urgent": "Urgente", "Emergency": "Emergencia",
+    "Stable": "Estable", "Attention": "Atención", "Immediate Action": "Acción inmediata", "Waiting for Owner": "En espera del propietario", "Approved": "Aprobado",
+    "Deferred": "Pospuesto", "Request Another Option": "Pidió otra opción", "Call me first": "Llámenme primero", "I paid this": "Yo pagué esto",
+    "After a visit": "Después de una visita", "After talking with the owner": "Después de hablar con el propietario",
+    "Repair": "Reparación", "Chore": "Tarea", "Vendor Visit": "Visita del proveedor", "Field Visit": "Visita en sitio", "Note": "Nota", "Follow-up": "Seguimiento",
+    "Utility": "Servicios públicos", "Service": "Servicio", "Maintenance": "Mantenimiento", "Tax": "Impuestos", "Other": "Otro",
+    "Included visit due": "Visita incluida pendiente", "Maintenance due": "Mantenimiento por vencer", "Project": "Proyecto", "Visit to bill": "Visita por facturar",
+    "Owner decision": "Decisión del propietario", "Owner arriving": "Llega el propietario", "Service interruption": "Interrupción del servicio",
+    "Expected bill not recorded": "Cuenta esperada sin registrar", "House Wallet below its trigger": "House Wallet bajo su mínimo", "Paid above its NTE": "Pagada sobre su NTE"
+  };
+  var STEP_ORDER = ["came", "bank", "bills", "repairs", "coming", "fix", "summary", "close"];
+  var ACT_STATUS = ["Open", "Watching", "Scheduled", "Vendor Reported Complete", "Complete", "Verified Complete", "Closed"];
+  var CATEGORIES = ["Utility", "Service", "Maintenance", "Repair", "Tax", "Other"];
+  var TYPES = ["Repair", "Chore", "Vendor Visit", "Field Visit", "Note"];
+  var REVIEW = { bank: 1, deposit: 1, bill: 1, paid: 1, decision: 1, summary: 1 };
+
+  // Everything the page knows right now. render() draws the screen from this.
+  var S = { lang: "en", tok: "", me: null, view: "loading", msg: null, flash: null, busy: false, home: null, data: null, code: "", open: "", form: null, queue: null, want: "", clientId: "", gReady: false, gFail: false, now: "" };
+
+  function el(id) { return document.getElementById(id); }
+  function esc(v) {
+    return String(v === null || v === undefined ? "" : v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function t(key, vars) {
+    var s = (T[S.lang] && T[S.lang][key]) || T.en[key] || key;
+    if (vars) { for (var k in vars) { s = s.split("{" + k + "}").join(String(vars[k])); } }
+    return s;
+  }
+  function tx(text) { return (S.lang === "es" && WORDS[text]) ? WORDS[text] : (text === null || text === undefined ? "" : String(text)); }
+  // A line the Sheet writes by itself, shown in the reader's language. What people type is shown as typed.
+  function sx(text) {
+    var m = /^Find out why: (.+) came in above its limit[.]$/.exec(String(text || ""));
+    return m && S.lang === "es" ? "Averiguar por qué: " + m[1] + " llegó por encima de su límite." : tx(text);
+  }
+  function recall(k) { try { return window.localStorage.getItem("lasteam." + k) || ""; } catch (e) { return ""; } }
+  function remember(k, v) { try { window.localStorage.setItem("lasteam." + k, v); } catch (e) {} }
+  function forget(k) { try { window.localStorage.removeItem("lasteam." + k); } catch (e) {} }
+  function isDay(s) { return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(String(s || "")); }
+  function day(s) {
+    s = String(s || "");
+    if (/^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$/.test(s)) { return day(s.substr(0, 10)) + ", " + clock(s.substr(11, 5)); }
+    if (!isDay(s)) { return s; }
+    var m = T[S.lang].md[+s.substr(5, 2) - 1], d = +s.substr(8, 2);
+    return S.lang === "es" ? d + " " + m : m + " " + d;
+  }
+  function remindOf(key) { var L = (S.data && S.data.remind) || []; for (var i = 0; i < L.length; i++) { if (L[i].key === key) { return L[i]; } } return null; }
+  function monthName(ym) {
+    var m = T[S.lang].md[+String(ym).substr(5, 2) - 1] || "", y = String(ym).substr(0, 4);
+    return m + " " + y;
+  }
+  function clock(hm) {
+    var h = +String(hm).substr(0, 2), mi = String(hm).substr(3, 2), h12 = h % 12;
+    if (h12 === 0) { h12 = 12; }
+    return h12 + ":" + mi + " " + (h < 12 ? (S.lang === "es" ? "a. m." : "AM") : (S.lang === "es" ? "p. m." : "PM"));
+  }
+  function money(n, cur) {
+    if (n === null || n === undefined || n === "") { return ""; }
+    var neg = n < 0, parts = Math.abs(Number(n)).toFixed(2).split("."), whole = parts[0], out = "";
+    while (whole.length > 3) { out = "," + whole.slice(-3) + out; whole = whole.slice(0, -3); }
+    return (cur ? cur + " " : "") + (neg ? "-" : "") + whole + out + "." + parts[1];
+  }
+  function href(u) { return /^https:[/][/]/.test(String(u || "")) ? String(u) : ""; }
+  function newId() {
+    var s = "", abc = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+    for (var i = 0; i < 20; i++) { s += abc.charAt(Math.floor(Math.random() * abc.length)); }
+    return s;
+  }
+  function role() { return S.me ? S.me.role : ""; }
+
+  /* ---------- talking to the Sheet ---------- */
+
+  function post(body, onAnswer, onFail) {
+    var ctrl = (typeof AbortController !== "undefined") ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 60000);
+    var opts = { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), redirect: "follow" };
+    if (ctrl) { opts.signal = ctrl.signal; }
+    fetch(API, opts)
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        clearTimeout(timer);
+        try { return JSON.parse(text); } catch (e) { return { ok: false, code: "SERVER" }; }
+      }, function () { clearTimeout(timer); return null; })
+      .then(function (j) { if (j === null) { onFail(); } else { onAnswer(j); } })
+      .then(null, function (err) {
+        try { console.error(err); } catch (e) {}
+        S.busy = false; S.view = "error"; S.msg = { key: "SERVER", retry: start2 };
+        try { render(); } catch (e2) {}
+      });
+  }
+
+  // What every answer may carry: who is signed in, and the latest lists.
+  function take(r) {
+    if (r.me) { S.me = r.me; if (!recall("lang") && (r.me.lang === "es" || r.me.lang === "en")) { S.lang = r.me.lang; } }
+    if (r.now) { S.now = r.now; }
+    if (r.home) { S.home = r.home; }
+    if (r.view) { S.data = r.view; S.code = r.view.prop.code; }
+    if (r.queue) { S.queue = r.queue; }
+    if (r.clientId !== undefined) { S.clientId = r.clientId; }
+  }
+
+  // An answer that says the sign-in is over sends the person back to the sign-in screen.
+  function signedOut(r) {
+    if (r.code !== "SIGN_IN") { return false; }
+    forget("tok"); S.tok = ""; S.data = null; S.home = null; S.queue = null; S.busy = false;
+    S.view = "signin"; S.msg = { key: "SIGN_AGAIN", kind: "warn" };
+    render(); google1();
+    return true;
+  }
+
+  function hello() {
+    S.view = "loading"; S.msg = null; render();
+    post({ op: "t_hello" }, function (r) {
+      take(r);
+      if (!r.ok || !S.clientId) { S.view = "error"; S.msg = { key: r.ok ? "NOT_SET_UP" : "SERVER", retry: hello }; render(); return; }
+      S.view = "signin"; render(); google1();
+    }, function () { S.view = "error"; S.msg = { key: "NET", retry: hello }; render(); });
+  }
+
+  /* ---------- Sign in with Google ---------- */
+
+  function google1() {
+    if (S.gReady) { drawGoogle(); return; }
+    if (el("gsi")) { return; }
+    var s = document.createElement("script");
+    s.id = "gsi"; s.async = true; s.src = "https://accounts.google.com/gsi/client";
+    s.onload = function () { S.gReady = true; drawGoogle(); };
+    s.onerror = function () { S.gFail = true; try { s.parentNode.removeChild(s); } catch (e) {} if (S.view === "signin") { render(); } };
+    document.head.appendChild(s);
+  }
+  function drawGoogle() {
+    var host = el("gbtn");
+    if (!host || !S.clientId || !window.google || !google.accounts || !google.accounts.id) { return; }
+    try {
+      google.accounts.id.initialize({ client_id: S.clientId, callback: onCredential, auto_select: true, cancel_on_tap_outside: false });
+      host.innerHTML = "";
+      google.accounts.id.renderButton(host, { theme: "filled_blue", size: "large", shape: "pill", text: "signin_with", locale: S.lang, width: 280 });
+      google.accounts.id.prompt();
+    } catch (e) { S.gFail = true; render(); }
+  }
+  function onCredential(resp) {
+    if (!resp || !resp.credential || S.busy) { return; }
+    S.busy = true; S.msg = null; render();
+    post({ op: "t_signin", cred: resp.credential }, function (r) {
+      S.busy = false;
+      take(r);
+      if (r.ok && r.tok) {
+        S.tok = r.tok; remember("tok", r.tok);
+        S.msg = null;
+        afterSignIn();
+        return;
+      }
+      try { google.accounts.id.disableAutoSelect(); } catch (e) {}
+      S.view = "signin"; S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad" }; render(); drawGoogle();
+    }, function () { S.busy = false; S.view = "signin"; S.msg = { key: "NET", kind: "bad" }; render(); drawGoogle(); });
+  }
+  function signOut() {
+    forget("tok"); S.tok = ""; S.me = null; S.data = null; S.home = null; S.queue = null;
+    try { google.accounts.id.disableAutoSelect(); } catch (e) {}
+    if (S.clientId) { S.view = "signin"; S.msg = null; render(); google1(); } else { hello(); }
+  }
+
+  // After signing in: the property the time clock sent the person to, when it is on their list. Otherwise the list.
+  function afterSignIn() {
+    var want = S.want; S.want = "";
+    var L = (S.home && S.home.props) || [];
+    for (var i = 0; i < L.length; i++) { if (want && L[i].code === want && !L[i].error) { openProp(want); return; } }
+    S.view = "home"; render(); window.scrollTo(0, 0);
+  }
+
+  /* ---------- loading the lists ---------- */
+
+  function loadHome(quiet) {
+    if (quiet !== true) { S.view = "loading"; S.msg = null; render(); }
+    post({ op: "t_home", tok: S.tok }, function (r) {
+      if (signedOut(r)) { return; }
+      take(r);
+      if (!r.ok) { S.view = "error"; S.msg = { key: T.en[r.code] ? r.code : "SERVER", retry: loadHome }; render(); return; }
+      if (quiet !== true) { afterSignIn(); } else if (S.view === "home") { render(); }
+    }, function () { if (quiet === true) { return; } S.view = "error"; S.msg = { key: "NET", retry: loadHome }; render(); });
+  }
+
+  function openProp(code) {
+    S.view = "loading"; S.msg = null; render();
+    post({ op: "t_prop", tok: S.tok, p: code }, function (r) {
+      if (signedOut(r)) { return; }
+      take(r);
+      if (!r.ok) { S.view = "home"; S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad", detail: r.detail || "" }; if (!S.home) { loadHome(); return; } render(); return; }
+      S.open = firstOpen();
+      go("prop");
+    }, function () { S.view = "error"; S.msg = { key: "NET", retry: function () { openProp(code); } }; render(); });
+  }
+  // The first step of the day that has not been closed yet.
+  function firstOpen() {
+    var D = S.data, L = D.steps || [];
+    for (var i = 0; i < L.length; i++) { if (!(D.done || {})[L[i]]) { return L[i]; } }
+    return "";
+  }
+
+  function loadQueue() {
+    S.view = "loading"; S.msg = null; render();
+    post({ op: "t_queue", tok: S.tok }, function (r) {
+      if (signedOut(r)) { return; }
+      take(r);
+      if (!r.ok) { S.view = "home"; S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad" }; render(); return; }
+      go("queue");
+    }, function () { S.view = "error"; S.msg = { key: "NET", retry: loadQueue }; render(); });
+  }
+
+  /* ---------- moving between screens ---------- */
+
+  function go(view, keep) {
+    S.view = view;
+    if (keep !== true) { S.msg = S.flash || null; S.flash = null; }
+    try { window.history.pushState({ view: view }, "", window.location.pathname); } catch (e) {}
+    render(); window.scrollTo(0, 0);
+  }
+  window.addEventListener("popstate", function (ev) {
+    if (!S.tok || !S.me) { return; }
+    var v = (ev.state && ev.state.view) || "home";
+    if ((v === "prop" || v === "form") && !S.data) { v = "home"; }
+    if (v === "form") { v = "prop"; }
+    if (v === "queue" && !S.queue) { v = "home"; }
+    S.view = v; S.form = null; S.msg = S.flash || null; S.flash = null;
+    render(); window.scrollTo(0, 0);
+    if (v === "home") { loadHome(true); }
+  });
+  function stepBack() { try { window.history.back(); } catch (e) { S.view = "home"; render(); } }
+
+  /* ---------- drawing ---------- */
+
+  function render() {
+    document.documentElement.lang = S.lang;
+    el("lang").textContent = t("other");
+    el("out").textContent = t("signOut");
+    var bare = S.view === "loading" || S.view === "error" || S.view === "signin";
+    el("bar").hidden = bare || !S.me;
+    el("whoName").textContent = S.me ? S.me.name : "";
+    var h = "";
+    if (S.view === "loading") { h = centered("", "<p>" + esc(t("loading")) + "</p>"); }
+    else if (S.view === "error") { h = centered("", "<p>" + esc(t(S.msg.key)) + "</p><button type='button' class='btn navy' data-act='retry'>" + esc(t("retry")) + "</button>"); }
+    else if (S.view === "signin") { h = signinView(); }
+    else if (S.view === "queue" && S.queue) { h = queueView(); }
+    else if (S.view === "form" && S.form && S.data) { h = formView(); }
+    else if (S.view === "prop" && S.data) { h = propView(); }
+    else { S.view = "home"; h = homeView(); }
+    el("app").innerHTML = h;
+    document.title = (S.view === "prop" && S.data ? S.data.prop.name + " - " : "") + t("title");
+    if (S.view === "signin") { var g = el("gbtn"); if (g && S.gReady && !g.firstChild) { drawGoogle(); } }
+  }
+
+  function centered(title, inner) {
+    return "<div class='wrap center'><img src='" + LOGO + "' alt='Liaison Asset Services'>" + (title ? "<h1 class='serif'>" + esc(title) + "</h1>" : "") + inner + "</div>";
+  }
+  function msgBox() {
+    if (!S.msg) { return ""; }
+    var text = S.msg.text || t(S.msg.key, S.msg.vars);
+    return "<div class='box " + (S.msg.kind || "bad") + "' role='alert'>" + esc(text) + (S.msg.detail ? "<br><span style='font-weight:400'>" + esc(S.msg.detail) + "</span>" : "") +
+      (S.msg.lines ? "<br>" + S.msg.lines.map(esc).join("<br>") : "") + "</div>";
+  }
+
+  function signinView() {
+    return "<div class='wrap center'><img src='" + LOGO + "' alt='Liaison Asset Services'><h1 class='serif'>" + esc(t("title")) + "</h1><p>" + esc(t("signP")) + "</p>" +
+      msgBox() + (S.busy ? "<p>" + esc(t("loading")) + "</p>" : "") + "<div id='gbtn'" + (S.busy ? " hidden" : "") + "></div>" +
+      (S.gFail && !S.busy ? "<div class='box warn'>" + esc(t("gFail")) + "</div><button type='button' class='btn navy' data-act='gretry'>" + esc(t("retry")) + "</button>" : "") +
+      "<p class='hint'>" + esc(t("signHint")) + "</p>" +
+      "<p style='margin-top:22px'><button type='button' class='link' data-act='lang'>" + esc(t("other")) + "</button></p></div>";
+  }
+
+  function pill(status) {
+    var s = String(status || "");
+    if (!s) { return ""; }
+    var cls = "s", key = "st_Stable";
+    if (s === "Attention") { cls = "a"; key = "st_Attention"; }
+    else if (s === "Immediate Action") { cls = "r"; key = "st_Immediate"; }
+    else if (s !== "Stable") { return "<span class='pill a'><i></i>" + esc(s) + "</span>"; }
+    return "<span class='pill " + cls + "'><i></i>" + esc(t(key)) + "</span>";
+  }
+  function tag(text, cls) { return "<span class='tag " + (cls || "") + "'>" + esc(text) + "</span>"; }
+  function note(label, text) { return text ? "<div class='note'><b>" + esc(label) + "</b>" + esc(text) + "</div>" : ""; }
+
+  /* ---------- the list of properties ---------- */
+
+  function homeView() {
+    var H = S.home || { props: [] }, h = "<div class='wrap pad'>";
+    h += "<h1 class='title serif'>" + esc(t("myDay")) + "</h1><p class='sub'>" + esc(t("today")) + (H.today ? ": " + esc(day(H.today)) : "") +
+      " · <button type='button' class='link' data-act='refresh'>" + esc(t("refresh")) + "</button></p>" + msgBox();
+    if (H.waiting) { h += "<button type='button' class='btn gold' data-act='queue'>" + esc(t(role() === "Principal" ? "waitingBtn" : "waitingMine")) + " (" + H.waiting + ")</button>"; }
+    else if (role() !== "Field") { h += "<p class='hint'><button type='button' class='link' data-act='queue'>" + esc(t(role() === "Principal" ? "waitingBtn" : "waitingMine")) + "</button></p>"; }
+    if (!H.props.length) { h += "<p class='empty'>" + esc(t("noProps")) + "</p>"; }
+    for (var i = 0; i < H.props.length; i++) { h += propCard(H.props[i]); }
+    return h + "</div>";
+  }
+
+  function propCard(c) {
+    var tags = "";
+    if (c.error) { tags += tag(t("c_error"), "r"); }
+    if (c.mode === "hold") { tags += tag(t("c_hold"), "w"); }
+    if (c.mode === "residence") { tags += tag(t("c_residence"), "w"); }
+    if (c.wallet && !c.wallet.ready) { tags += tag(t("c_setup"), "w"); }
+    if (c.over) { tags += tag(t("c_over", { n: c.over }), "r"); }
+    if (c.bills) { tags += tag(t("c_bills", { n: c.bills }), "w"); }
+    if (c.wallet && c.wallet.missing) { tags += tag(t("c_missing", { n: c.wallet.missing }), "w"); }
+    if (c.wallet && c.wallet.low) { tags += tag(t("c_low"), "r"); }
+    if (c.waiting) { tags += tag(t("c_decisions", { n: c.waiting }), "w"); }
+    if (c.summaryDue) { tags += tag(t("c_summary"), "w"); }
+    if (c.remind) { tags += tag(t("c_remind"), "w"); }
+    if (c.open) { tags += tag(t("c_open", { n: c.open })); }
+    if (c.stale) { tags += tag(t("c_stale", { n: c.stale }), "w"); }
+    if (c.fix) { tags += tag(t("c_fix", { n: c.fix })); }
+    if (c.closed) { tags += tag(t("c_closed"), "g"); } else if (c.steps) { tags += tag(t("c_steps", { n: c.steps }), "g"); }
+    return "<button type='button' class='card" + (c.closed ? " done" : "") + "' data-prop='" + esc(c.code) + "'" + (c.error ? " disabled" : "") + ">" +
+      "<div class='t'>" + esc(c.name) + "</div><div class='r'>" + esc([c.code, c.level].filter(Boolean).join(" · ")) + "</div>" +
+      (c.status ? "<div style='margin-bottom:8px'>" + pill(c.status) + "</div>" : "") + tags + "</button>";
+  }
+
+  /* ---------- one property: the steps of the day ---------- */
+
+  function propView() {
+    var D = S.data, h = "<div class='wrap pad'><button type='button' class='back' data-act='home'>‹ " + esc(t("myDay")) + "</button>";
+    h += "<h1 class='title serif'>" + esc(D.prop.name) + "</h1><p class='sub'>" + esc([D.prop.code, D.prop.level, D.prop.loc].filter(Boolean).join(" · ")) + "</p>";
+    h += "<div>" + pill(D.status) + (D.prop.mode === "hold" ? " " + tag(t("c_hold"), "w") : "") + (D.prop.mode === "residence" ? " " + tag(t("c_residence"), "w") : "") + "</div>";
+    if (D.minutes) { h += "<p class='hint'>" + esc(t(D.minutes.used > D.minutes.allow ? "minutesOver" : "minutes", { u: D.minutes.used, a: D.minutes.allow })) + "</p>"; }
+    h += msgBox();
+    if ((D.queue || []).length) {
+      h += "<div class='box info'><b>" + esc(t("qWaiting")) + " (" + D.queue.length + ")</b>";
+      for (var q = 0; q < D.queue.length; q++) { h += "<br>" + esc(D.queue[q].what) + " <span class='sub'>(" + esc(t("qBy", { who: D.queue[q].by, t: day(D.queue[q].when) })) + ")</span>"; }
+      h += "</div>";
+    }
+    var L = D.steps || [];
+    for (var i = 0; i < L.length; i++) { h += stepBlock(L[i], i + 1); }
+    return h + "</div>";
+  }
+
+  function stepCount(step) {
+    var D = S.data, n = 0, i;
+    if (step === "came") { n = ((D.came.calls || []).length) + ((D.came.clock && D.came.clock.noshow) || []).length + ((D.came.clock && D.came.clock.review) || []).length; }
+    if (step === "bank" && D.wallet) { n = D.wallet.ready ? ((D.wallet.bankAsk ? 1 : 0) + (D.wallet.low || []).length + (remindOf("statement") ? 1 : 0)) : 1; }
+    if (step === "bills") { n = (D.bills || []).length + ((D.wallet && D.wallet.missing) || []).length; }
+    if (step === "repairs") { n = (D.items || []).length; }
+    if (step === "coming") { n = (D.coming || []).length; }
+    if (step === "fix") { n = (D.fix || []).length + (D.held || []).length; }
+    if (step === "summary") { n = (D.summary && D.summary.due ? 1 : 0) + (remindOf("review") ? 1 : 0); }
+    return n;
+  }
+
+  function stepBlock(step, num) {
+    var D = S.data, done = (D.done || {})[step], open = S.open === step, n = stepCount(step);
+    var sub = done ? t(done.result === "Nothing today" ? "nothingBy" : "doneBy", { who: done.by }) : t("h_" + step);
+    var h = "<div class='step" + (open ? " open" : "") + "' id='step_" + step + "'><button type='button' class='sh' data-step='" + step + "' aria-expanded='" + (open ? "true" : "false") + "'>" +
+      "<span class='num" + (done ? " ok" : "") + "'>" + (done ? "✓" : num) + "</span><span class='st'>" + esc(t("s_" + step)) + "<small>" + esc(sub) + "</small></span>" +
+      (n && !done ? "<span class='n'>" + n + "</span>" : "") + "</button>";
+    if (!open) { return h + "</div>"; }
+    h += "<div class='body'>";
+    if (step === "came") { h += cameBody(); }
+    else if (step === "bank") { h += bankBody(); }
+    else if (step === "bills") { h += billsBody(); }
+    else if (step === "repairs") { h += repairsBody(); }
+    else if (step === "coming") { h += comingBody(); }
+    else if (step === "fix") { h += fixBody(); }
+    else if (step === "summary") { h += summaryBody(); }
+    else if (step === "close") { h += closeBody(done); }
+    if (step !== "close") {
+      var dis = S.busy ? " disabled" : "";
+      h += "<div class='two'><button type='button' class='btn navy' data-done='" + step + "'" + dis + ">" + esc(t("markDone")) + "</button>" +
+        "<button type='button' class='btn' data-nothing='" + step + "'" + dis + ">" + esc(t("markNothing")) + "</button></div>";
+    }
+    return h + "</div></div>";
+  }
+
+  function cameBody() {
+    var D = S.data, C = D.came, i, h = "";
+    if (C.handoff) { h += note(t("handoff", { who: C.handoff.by, d: day(C.handoff.day) }), C.handoff.note); }
+    h += "<div class='box info'>" + esc(t("msgRemind")) + "</div>";
+    if ((C.calls || []).length) {
+      h += "<h2>" + esc(t("calls")) + "</h2>";
+      for (i = 0; i < C.calls.length; i++) { h += "<div class='item'><div class='h'>" + esc(C.calls[i].issue) + "</div><div class='m'>" + esc(C.calls[i].id + " · " + day(C.calls[i].called)) + "</div></div>"; }
+    }
+    if (C.answers) {
+      h += "<h2>" + esc(t("answers")) + "</h2>";
+      if (!C.answers.length) { h += "<p class='empty'>" + esc(t("noAnswers")) + "</p>"; }
+      for (i = 0; i < C.answers.length; i++) {
+        var a = C.answers[i];
+        h += "<div class='item'><div class='h'>" + esc(tx(a.chose)) + ": " + esc(a.issue) + "</div><div class='m'>" + esc([a.by, day(a.when), a.id].filter(Boolean).join(" · ")) + "</div>" + (a.note ? note(t("l_note"), a.note) : "") + "</div>";
+      }
+    }
+    var K = C.clock || {};
+    if (K.ok === false) { if (K.why) { h += "<div class='box warn'>" + esc(t("clockOff")) + " " + esc(K.why) + "</div>"; } return h; }
+    for (i = 0; i < (K.noshow || []).length; i++) { h += "<div class='box warn'><b>" + esc(t("noshow")) + "</b><br>" + esc(t("noshowP", { name: K.noshow[i].name, days: K.noshow[i].days })) + "</div>"; }
+    h += "<h2>" + esc(t("onClock")) + "</h2>";
+    if (!(K.on || []).length) { h += "<p class='empty'>" + esc(t("nobodyOn")) + "</p>"; }
+    for (i = 0; i < (K.on || []).length; i++) {
+      h += "<div class='item'><div class='h'>" + esc(K.on[i].name) + "</div><div class='m'>" + esc([K.on[i].type, K.on[i].desk ? t("desk") : "", K.on[i].at ? t("since", { t: clock(K.on[i].at) }) : ""].filter(Boolean).join(" · ")) + "</div></div>";
+    }
+    if ((K.review || []).length) {
+      h += "<h2>" + esc(t("review")) + "</h2>";
+      for (i = 0; i < K.review.length; i++) { h += "<div class='item'><div class='h'>" + esc(K.review[i].name) + "</div><div class='m'>" + esc(day(K.review[i].day) + " · " + K.review[i].what) + "</div></div>"; }
+    }
+    return h;
+  }
+
+  function bankBody() {
+    var W = S.data.wallet, i, h = "";
+    if (!W.ready) {
+      var u = W.setup || {};
+      h += "<h2>" + esc(t("setupT")) + "</h2><ul class='check'>" +
+        "<li class='" + (u.active ? "y" : "") + "'>" + esc(t("setup1")) + "</li>" +
+        "<li class='" + (u.bills ? "y" : "") + "'>" + esc(t("setup2", { n: u.bills || 0 })) + "</li>" +
+        "<li class='" + (u.approved ? "y" : "") + "'>" + esc(t(W.approval && W.approval.changed ? "setup3c" : "setup3")) + "</li>" +
+        "<li class='" + (u.bank ? "y" : "") + "'>" + esc(t("setup4")) + "</li></ul><p class='hint'>" + esc(t("setupP")) + "</p>";
+      if (role() === "Principal" && !u.bank) { h += "<button type='button' class='btn' data-form='bank'>" + esc(t("bBank")) + "</button>"; }
+      return h;
+    }
+    var bankBy = {};
+    for (i = 0; i < (W.bank || []).length; i++) { bankBy[W.bank[i].cur] = W.bank[i]; }
+    for (i = 0; i < (W.byCur || []).length; i++) {
+      var b = W.byCur[i], bk = bankBy[b.cur];
+      h += "<div class='card' style='border-color:#d5dbe1'><div class='r' style='margin:0'>" + esc(t("balRec")) + " · " + esc(b.cur) + "</div><div class='bal'>" + esc(money(b.balance, b.cur)) + "</div>" +
+        "<div class='m' style='font-size:14px;margin-top:4px'>" + (bk ? (bk.matched ? tag(t("bankOk", { d: day(bk.date) }), "g") : tag(t("bankNo", { d: day(bk.date) }), "r")) : tag(t("bankNever"), "w")) + "</div></div>";
+    }
+    for (i = 0; i < (W.low || []).length; i++) { h += "<div class='box warn'>" + esc(t("low", { c: W.low[i].cur, a: money(W.low[i].balance, ""), t: money(W.low[i].trigger, "") })) + "</div>"; }
+    h += "<div class='box " + (W.bankAsk ? "warn" : "good") + "'>" + esc(t("ask_" + (W.bankAsk || ""))) + "</div>";
+    h += "<button type='button' class='btn" + (W.bankAsk ? " navy" : "") + "' data-form='bank'>" + esc(t("bBank")) + "</button>";
+    h += "<button type='button' class='btn' data-form='deposit'>" + esc(t("bDeposit")) + "</button>";
+    var stm = remindOf("statement");
+    if (stm) {
+      h += "<div class='box warn'>" + esc(t("remStatement", { m: monthName(stm.month) })) +
+        "<br><button type='button' class='btn small' data-done='statement'" + (S.busy ? " disabled" : "") + ">" + esc(t("remStatementBtn")) + "</button></div>";
+    }
+    if ((W.lines || []).length) {
+      h += "<h2>" + esc(t("ledger")) + "</h2><table class='t'>";
+      for (i = 0; i < W.lines.length && i < (stm ? 40 : 8); i++) {
+        var ln = W.lines[i], label = ln.text || t(ln.kind === "out" ? "outL" : "inL");
+        if (ln.by === "Owner") { label += " (" + t("byOwner") + ")"; }
+        h += "<tr><td>" + esc(day(ln.date)) + "<br><span class='sub'>" + esc(label) + "</span></td><td class='n'>" + esc(money(ln.amt, ln.cur)) + "<br><span class='sub'>" + esc(t("balAfter", { a: money(ln.bal, "") })) + "</span></td></tr>";
+      }
+      h += "</table>";
+    }
+    return h;
+  }
+
+  function billFlags(b) {
+    var f = "";
+    if (b.over) { f += tag(b.overNte ? t("overHold", { a: money(b.nte, b.cur) }) : t("noLimit"), "r"); }
+    else if (b.payReport) { f += tag(t("overPay", { a: money(b.nte, b.cur) }), "w"); }
+    else if (b.overNte) { f += tag(t("overInfo", { a: money(b.nte, b.cur) }), "w"); }
+    if (b.high && !b.overNte) { f += tag(t("high", { a: money(b.usual, b.cur) }), "w"); }
+    if (b.decision) { f += tag(t("decision", { s: b.ref + ": " + tx(b.decision) })); }
+    return f;
+  }
+
+  function billsBody() {
+    var D = S.data, W = D.wallet || {}, i, h = "";
+    if ((W.missing || []).length) {
+      h += "<h2>" + esc(t("missingT")) + "</h2>";
+      for (i = 0; i < W.missing.length; i++) {
+        h += "<div class='item'><div class='h'>" + esc(t("missingP", { name: W.missing[i].name, d: day(W.missing[i].due) })) + (W.missing[i].late ? " " + tag(t("late"), "r") : "") + "</div>" +
+          "<button type='button' class='btn small' data-form='bill' data-arg='" + esc(W.missing[i].name) + "'>" + esc(t("bRecord")) + "</button></div>";
+      }
+    }
+    h += "<h2>" + esc(t("toPay")) + "</h2>";
+    if (!(D.bills || []).length) { h += "<p class='empty'>" + esc(t("noBills")) + "</p>"; }
+    for (i = 0; i < (D.bills || []).length; i++) {
+      var b = D.bills[i];
+      h += "<div class='item'><div class='h'>" + esc(b.desc) + "</div><div class='m'>" + esc([b.payee, b.due ? t("due", { d: day(b.due) }) : ""].filter(Boolean).join(" · ")) + "</div>" +
+        "<div class='amt'>" + esc(money(b.amount, b.cur)) + "</div><div style='margin-top:6px'>" + tag(t(b.fromWallet ? "wPays" : "oPays"), b.fromWallet ? "" : "g") + (b.pastDue ? tag(t("pastDue"), "r") : "") + billFlags(b) + "</div>" +
+        (b.notes ? note(t("l_notes"), b.notes) : "") +
+        "<button type='button' class='btn small' data-form='paid' data-arg='" + esc(b.row) + "'>" + esc(t("bPaid")) + "</button></div>";
+    }
+    h += "<button type='button' class='btn' data-form='bill'>" + esc(t("bAddBill")) + "</button>";
+    if (D.prop.decisions) { h += "<button type='button' class='btn' data-form='decision'>" + esc(t("bDecision")) + "</button>"; }
+    if ((W.coming || []).length) {
+      h += "<h2>" + esc(t("comingBills")) + "</h2><table class='t'>";
+      for (i = 0; i < W.coming.length; i++) {
+        h += "<tr><td>" + esc(W.coming[i].name) + "<br><span class='sub'>" + esc(t("due", { d: day(W.coming[i].due) })) + "</span></td><td class='n'>" +
+          esc(W.coming[i].usual !== null && W.coming[i].usual !== undefined ? t("about", { a: money(W.coming[i].usual, W.coming[i].cur) }) : "") + "</td></tr>";
+      }
+      h += "</table>";
+    }
+    if ((D.paid || []).length) {
+      h += "<h2>" + esc(t("paidLately")) + "</h2><table class='t'>";
+      for (i = 0; i < D.paid.length; i++) {
+        var p = D.paid[i];
+        h += "<tr><td>" + esc(p.desc) + "<br><span class='sub'>" + esc([day(p.paid), p.paidBy === "Owner" ? t("byOwner2") : (p.paidBy === "LAS" ? t("byLas") : "")].filter(Boolean).join(" · ")) + "</span>" +
+          (p.fromWallet && p.paidBy !== "Owner" && !p.proof ? " " + tag(t("noProof"), "r") : "") + (p.dup ? " " + tag(t("paidTwice"), "r") : "") + "</td><td class='n'>" + esc(money(p.amount, p.cur)) +
+          (p.wAmount !== undefined && p.wCur ? "<br><span class='sub'>" + esc(money(p.wAmount, p.wCur)) + "</span>" : "") + "</td></tr>";
+      }
+      h += "</table>";
+    }
+    return h;
+  }
+
+  function itemBlock(a, canUpdate) {
+    var u = href(a.url) || href(a.evidence);
+    return "<div class='item'><div class='h'>" + esc(sx(a.summary)) + "</div><div class='m'>" + esc([day(a.date), tx(a.type), a.who, a.cost !== undefined ? money(a.cost, a.cur) : ""].filter(Boolean).join(" · ")) + "</div>" +
+      tag(tx(a.status), a.status === "Verified Complete" || a.status === "Complete" || a.status === "Closed" ? "g" : "w") + (a.priority && a.priority !== "Routine" ? tag(tx(a.priority), "r") : "") +
+      (a.stale ? tag(t("stale", { n: a.quiet }), "r") : "") + note(t("nextStep"), tx(a.next)) +
+      (u ? "<div class='hint'>" + esc(t("proof")) + ": <a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + esc(t("open")) + "</a></div>" : (a.evidence ? "<div class='hint'>" + esc(t("proof")) + ": " + esc(a.evidence) + "</div>" : "")) +
+      (canUpdate ? "<button type='button' class='btn small' data-form='act_update' data-arg='" + esc(a.row) + "'>" + esc(t("bUpdate")) + "</button>" : "") + "</div>";
+  }
+
+  function repairsBody() {
+    var D = S.data, i, h = "<h2>" + esc(t("openItems")) + "</h2>";
+    if (!(D.items || []).length) { h += "<p class='empty'>" + esc(t("noItems")) + "</p>"; }
+    for (i = 0; i < (D.items || []).length; i++) { h += itemBlock(D.items[i], true); }
+    h += "<button type='button' class='btn' data-form='act_add'>" + esc(t("bAddItem")) + "</button>";
+    if ((D.itemsDone || []).length) {
+      h += "<h2>" + esc(t("doneLately")) + "</h2>";
+      for (i = 0; i < D.itemsDone.length; i++) { h += itemBlock(D.itemsDone[i], false); }
+    }
+    return h;
+  }
+
+  function comingBody() {
+    var L = S.data.coming || [], h = "";
+    if (!L.length) { return "<p class='empty'>" + esc(t("noComing")) + "</p>"; }
+    for (var i = 0; i < L.length; i++) {
+      var c = L[i];
+      h += "<div class='item'><div class='h'>" + esc(c.what) + "</div><div class='m'>" + esc([isDay(c.date) ? day(c.date) : c.date, c.who, c.money].filter(Boolean).join(" · ")) + "</div>" +
+        tag(tx(c.kind), "w") + (c.status ? tag(tx(c.status)) : "") + (c.check ? tag(c.check, "r") : "") + note(t("nextStep"), c.next) + "</div>";
+    }
+    return h;
+  }
+
+  function fixBody() {
+    var D = S.data, i, h = "";
+    if (!(D.fix || []).length && !(D.held || []).length) { return "<p class='empty'>" + esc(t("noFix")) + "</p>"; }
+    for (i = 0; i < (D.fix || []).length; i++) { h += "<div class='item'><div class='m' style='color:#0f2340;font-size:15px;margin:0'>" + esc(D.fix[i]) + "</div></div>"; }
+    if ((D.held || []).length) {
+      h += "<h2>" + esc(t("heldT")) + "</h2>";
+      for (i = 0; i < D.held.length; i++) { h += "<div class='item'><div class='m' style='color:#0f2340;font-size:15px;margin:0'>" + esc(D.held[i]) + "</div></div>"; }
+    }
+    return h;
+  }
+
+  function summaryBody() {
+    var M = S.data.summary, i, h = "", rv = remindOf("review");
+    if (rv) {
+      h += "<div class='box warn'>" + esc(rv.days === undefined ? t("remReview0") : t("remReview", { n: rv.days })) + "<div style='margin-top:8px'>" + pill(S.data.status) + "</div>" +
+        "<button type='button' class='btn small' data-done='review'" + (S.busy ? " disabled" : "") + ">" + esc(t("remReviewBtn")) + "</button></div>";
+    }
+    if (M.due) { h += "<div class='box warn'><b>" + esc(t("sumDue")) + "</b><br>" + (M.why || []).map(esc).join("<br>") + "</div>"; }
+    else { h += "<div class='box good'>" + esc(t("sumNot")) + " " + esc(M.last ? t("sumLast", { d: day(M.last) }) : t("sumNever")) + "</div>"; }
+    h += "<button type='button' class='btn navy' data-form='summary'>" + esc(t("bWrite")) + "</button>";
+    h += "<h2>" + esc(t("sumNow")) + "</h2><div>" + pill(S.data.status) + "</div>";
+    var blocks = [["happened", "b_happened"], ["did", "b_did"], ["attention", "b_attention"], ["decide", "b_need"]];
+    for (i = 0; i < blocks.length; i++) { h += note(t(blocks[i][1]), (M.story || {})[blocks[i][0]]); }
+    if (!M.tab) { h += "<p class='hint'>" + esc(t("noHist")) + "</p>"; }
+    if ((M.history || []).length) {
+      h += "<h2>" + esc(t("sumHist")) + "</h2>";
+      for (i = 0; i < M.history.length; i++) {
+        var s = M.history[i];
+        h += "<div class='item'><div class='m' style='margin:0'>" + esc(day(s.date) + (s.kind ? " · " + tx(s.kind) : "")) + "</div>" + pill(s.status) + note(t("b_happened"), s.happened) + "</div>";
+      }
+    }
+    return h;
+  }
+
+  function closeBody(done) {
+    var dis = S.busy ? " disabled" : "", h = "";
+    if (done) { h += "<div class='box good'>" + esc(t("closed", { who: done.by })) + (done.note ? "<br>" + esc(done.note) : "") + "</div>"; }
+    h += "<p class='hint'>" + esc(t("closeP")) + "</p><label class='l' for='closeNote'>" + esc(t("closeL")) + "</label><textarea id='closeNote' maxlength='600'" + dis + "></textarea>" +
+      "<button type='button' class='btn navy' data-done='close'" + dis + ">" + esc(t("bClose")) + "</button>";
+    return h;
+  }
+
+  /* ---------- forms ---------- */
+
+  function findBy(list, row) { for (var i = 0; i < (list || []).length; i++) { if (String(list[i].row) === String(row)) { return list[i]; } } return null; }
+  function opt(v, label) { return [v, label]; }
+  function curOptions() { return [opt("HNL", "HNL"), opt("USD", "USD")]; }
+  function walletCur() { var W = S.data.wallet || {}; return (W.byCur && W.byCur.length === 1) ? W.byCur[0].cur : ""; }
+
+  // The boxes of each form. Each one: id, type, label, and where its starting value comes from.
+  function fieldsFor(kind, init) {
+    var D = S.data, W = D.wallet || {}, today = D.today, F = [], i, list;
+    if (kind === "bank") {
+      F = [{ id: "date", type: "date", label: "l_date", value: today }, { id: "balance", type: "money", label: "l_balance" }, { id: "cur", type: "select", label: "l_cur", options: curOptions(), value: walletCur() }, { id: "note", type: "text", label: "l_note" }];
+    } else if (kind === "deposit") {
+      F = [{ id: "dir", type: "select", label: "l_kindD", options: [opt("in", t("o_in")), opt("out", t("o_out"))], value: "in" }, { id: "date", type: "date", label: "l_date", value: today },
+        { id: "amount", type: "money", label: "l_amount" }, { id: "cur", type: "select", label: "l_cur", options: curOptions(), value: walletCur() }, { id: "note", type: "text", label: "l_note" }];
+    } else if (kind === "bill") {
+      list = [];
+      for (i = 0; i < (W.bills || []).length; i++) { list.push(opt(W.bills[i].name, W.bills[i].name)); }
+      list.push(opt("", t("o_other")));
+      var eb = null;
+      for (i = 0; i < (W.bills || []).length; i++) { if (W.bills[i].name === init.bill) { eb = W.bills[i]; } }
+      var canWallet = !!(W.on && W.ready);
+      if (list.length > 1) { F.push({ id: "bill", type: "select", label: "l_bill", options: list, value: eb ? eb.name : "", redraw: true }); }
+      if (!eb) {
+        F.push({ id: "desc", type: "text", label: "l_desc" }, { id: "payee", type: "text", label: "l_payee" });
+        F.push({ id: "category", type: "select", label: "l_category", options: CATEGORIES.map(function (c) { return opt(c, tx(c)); }), value: "Utility" });
+      }
+      F.push({ id: "amount", type: "money", label: "l_amount" }, { id: "cur", type: "select", label: "l_cur", options: curOptions(), value: eb && eb.cur ? eb.cur : walletCur() });
+      F.push({ id: "date", type: "date", label: "l_date", value: today }, { id: "due", type: "date", label: "l_due", value: today, future: true });
+      F.push({ id: "from", type: "select", label: "l_from", options: canWallet ? [opt("wallet", t("o_wallet")), opt("owner", t("o_owner"))] : [opt("owner", t("o_owner"))], value: canWallet ? "wallet" : "owner" });
+      if (!eb) { F.push({ id: "ref", type: "text", label: "l_ref", hint: "h_ref" }); }
+      F.push({ id: "notes", type: "text", label: "l_notes" });
+    } else if (kind === "paid") {
+      var b = findBy(D.bills, init.row) || {};
+      var who = [];
+      if (b.fromWallet && W.ready && !b.over) { who.push(opt("las", t("o_las"))); }
+      who.push(opt("own", t("o_ownerOwn")));
+      if (W.on) { who.push(opt("ownw", t("o_ownerWallet"))); }
+      F = [{ id: "by", type: "select", label: "l_by", options: who, value: who[0][0], redraw: true }, { id: "paidDate", type: "date", label: "l_paidDate", value: today },
+        { id: "proof", type: "url", label: "l_proof", hint: "h_proof" }];
+      if ((init.by || who[0][0]) !== "own") { F.push({ id: "wAmount", type: "money", label: "l_wAmount", hint: "h_wAmount" }, { id: "wCur", type: "select", label: "l_wCur", options: [opt("", t("choose"))].concat(curOptions()), value: "" }); }
+      F.push({ id: "note", type: "text", label: "l_notes" });
+    } else if (kind === "decision") {
+      F = [{ id: "issue", type: "long", label: "l_issue" }, { id: "rec", type: "long", label: "l_rec" }, { id: "amount", type: "money", label: "l_amountO" },
+        { id: "cur", type: "select", label: "l_cur", options: [opt("", t("choose"))].concat(curOptions()), value: "" }, { id: "ref", type: "text", label: "l_ref", hint: "h_ref" }];
+    } else if (kind === "act_add") {
+      F = [{ id: "summary", type: "long", label: "l_summary" }, { id: "type", type: "select", label: "l_type", options: TYPES.map(function (x) { return opt(x, tx(x)); }), value: "Repair" },
+        { id: "who", type: "text", label: "l_who" }, { id: "status", type: "select", label: "l_status", options: ACT_STATUS.map(function (x) { return opt(x, tx(x)); }), value: "Open" },
+        { id: "priority", type: "select", label: "l_priority", options: ["Routine", "Urgent", "Emergency"].map(function (x) { return opt(x, tx(x)); }), value: "Routine" },
+        { id: "next", type: "text", label: "l_next" }, { id: "evidence", type: "text", label: "l_evidence" },
+        { id: "how", type: "select", label: "l_how", options: [opt("", t("o_none")), opt("person", t("o_person")), opt("pictures", t("o_pictures"))], value: "" }];
+    } else if (kind === "act_update") {
+      var a = findBy(D.items, init.row) || {};
+      F = [{ id: "status", type: "select", label: "l_status", options: ACT_STATUS.map(function (x) { return opt(x, tx(x)); }), value: a.status || "Open" },
+        { id: "how", type: "select", label: "l_how", options: [opt("", t("o_none")), opt("person", t("o_person")), opt("pictures", t("o_pictures"))], value: "" },
+        { id: "next", type: "text", label: "l_next", value: a.next || "" }, { id: "who", type: "text", label: "l_who", value: a.who || "" },
+        { id: "evidence", type: "text", label: "l_evidence", value: a.evidence || a.url || "" }];
+    } else if (kind === "summary") {
+      var kinds = (D.summary && D.summary.kinds) || [];
+      F = [{ id: "kind", type: "select", label: "l_kind", options: kinds.map(function (x) { return opt(x, tx(x)); }), value: kinds[0] || "" },
+        { id: "status", type: "select", label: "l_statusS", options: ["Stable", "Attention", "Immediate Action"].map(function (x) { return opt(x, tx(x)); }), value: D.status || "Stable" },
+        { id: "happened", type: "long", label: "b_happened", hint: "h_block" }, { id: "did", type: "long", label: "b_did" }, { id: "attention", type: "long", label: "b_attention" }, { id: "need", type: "long", label: "b_need" }];
+    }
+    return F;
+  }
+
+  function openForm(kind, arg) {
+    var init = {};
+    if (kind === "bill") { init.bill = arg || ""; }
+    if (kind === "paid" || kind === "act_update") { init.row = arg; }
+    S.form = { kind: kind, init: init, vals: {}, bad: "", rid: "", again: false };
+    go("form");
+  }
+
+  function formHead() {
+    var f = S.form, D = S.data, sub = "";
+    if (f.kind === "paid") { var b = findBy(D.bills, f.init.row); if (b) { sub = b.desc + " · " + money(b.amount, b.cur); } }
+    if (f.kind === "act_update") { var a = findBy(D.items, f.init.row); if (a) { sub = sx(a.summary); } }
+    return "<div class='wrap pad'><button type='button' class='back' data-act='back'>‹ " + esc(t("back")) + "</button><h1 class='title serif'>" + esc(t("f_" + f.kind)) + "</h1>" +
+      "<p class='sub'>" + esc(D.prop.name) + (sub ? " · " + esc(sub) : "") + "</p>" + msgBox();
+  }
+
+  function formView() {
+    var f = S.form, F = fieldsFor(f.kind, Object.assign({}, f.init, f.vals)), h = formHead(), dis = S.busy ? " disabled" : "";
+    for (var i = 0; i < F.length; i++) {
+      var x = F[i], id = "f_" + x.id, v = f.vals[x.id] !== undefined ? f.vals[x.id] : (x.value !== undefined ? x.value : ""), bad = f.bad === x.id ? " bad" : "";
+      h += "<label class='l' for='" + id + "'>" + esc(t(x.label)) + "</label>";
+      if (x.hint) { h += "<div class='qh'>" + esc(t(x.hint)) + "</div>"; }
+      if (x.type === "select") {
+        h += "<select class='f" + bad + "' id='" + id + "'" + (x.redraw ? " data-redraw='1'" : "") + dis + ">";
+        for (var k = 0; k < x.options.length; k++) { h += "<option value='" + esc(x.options[k][0]) + "'" + (String(x.options[k][0]) === String(v) ? " selected" : "") + ">" + esc(x.options[k][1]) + "</option>"; }
+        h += "</select>";
+      } else if (x.type === "long") {
+        h += "<textarea class='" + bad.trim() + "' id='" + id + "' maxlength='1200'" + dis + ">" + esc(v) + "</textarea>";
+      } else {
+        var type = x.type === "date" ? "date" : (x.type === "url" ? "url" : "text");
+        h += "<input class='f" + bad + "' id='" + id + "' type='" + type + "'" + (x.type === "money" ? " inputmode='decimal'" : "") + (x.type === "date" && !x.future ? " max='" + esc(S.data.today) + "'" : "") +
+          " autocomplete='off' maxlength='400' value='" + esc(v) + "'" + dis + ">";
+      }
+    }
+    var waits = role() !== "Principal" && REVIEW[f.kind];
+    var seen = f.kind === "summary" || f.kind === "act_add" || f.kind === "act_update" || f.kind === "decision" || f.kind === "bill" || f.kind === "paid";
+    h += "<p class='hint'>" + esc(waits ? t("sureQ") : (seen ? t("sure") : "")) + "</p>";
+    if (f.again) { h += "<button type='button' class='btn gold' data-act='again'" + dis + ">" + esc(t("again")) + "</button>"; }
+    h += "<button type='button' class='btn navy' data-act='submit'" + dis + ">" + esc(S.busy ? t("saving") : (waits ? t("send") : (f.kind === "summary" ? t("post") : t("save")))) + "</button>";
+    return h + "</div>";
+  }
+
+  // What is typed on the form on screen, so it is not lost when the screen is drawn again.
+  function capture() {
+    if (S.view !== "form" || !S.form) { return; }
+    var F = fieldsFor(S.form.kind, Object.assign({}, S.form.init, S.form.vals));
+    for (var i = 0; i < F.length; i++) { var n = el("f_" + F[i].id); if (n) { S.form.vals[F[i].id] = String(n.value || "").trim(); } }
+  }
+
+  function amountOf(v) { var s = String(v || "").replace(/[^0-9.]/g, ""); return s === "" ? "" : s; }
+
+  function submitForm(again) {
+    if (S.busy || !S.form) { return; }
+    capture();
+    var f = S.form, v = f.vals, D = S.data, data = {}, k;
+    for (k in v) { data[k] = v[k]; }
+    if (f.kind === "bank") { data.balance = (String(v.balance || "").indexOf("-") === 0 ? "-" : "") + amountOf(v.balance); }
+    if (f.kind === "deposit") { data.amount = amountOf(v.amount); if (data.amount !== "" && v.dir === "out") { data.amount = "-" + data.amount; } delete data.dir; }
+    if (f.kind === "bill") { data.amount = amountOf(v.amount); if (again === true) { data.again = true; } }
+    if (f.kind === "decision") { data.amount = amountOf(v.amount); }
+    if (f.kind === "paid") {
+      var b = findBy(D.bills, f.init.row) || {};
+      data.row = b.row; data.amount = b.amount; data.cur = b.cur; data.desc = b.desc;
+      data.by = v.by === "las" ? "LAS" : "Owner"; data.from = v.by === "own" ? "owner" : "wallet";
+      data.wAmount = amountOf(v.wAmount);
+    }
+    if (f.kind === "act_update") { var a = findBy(D.items, f.init.row) || {}; data.row = a.row; data.summary = a.summary; }
+    if (!f.rid) { f.rid = newId(); }
+    S.busy = true; S.msg = null; f.bad = ""; render();
+    post({ op: "t_do", tok: S.tok, p: S.code, kind: f.kind, data: data, rid: f.rid }, function (r) {
+      S.busy = false;
+      if (signedOut(r)) { return; }
+      take(r);
+      if (r.ok && r.done) {
+        S.flash = doneMessage(r.done);
+        S.form = null;
+        stepBack();
+        return;
+      }
+      f.rid = ""; f.again = r.code === "DUP_BILL";
+      f.bad = r.field || "";
+      S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad", detail: r.code === "NOT_READY" ? (r.detail || "") : "" };
+      render(); window.scrollTo(0, 0);
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+
+  function doneMessage(done) {
+    if (done.queued) { return { key: "queued", kind: "info", lines: [done.what] }; }
+    var lines = [], warn = false, notes = done.notes || [];
+    if (done.what) { lines.push(done.what); }
+    for (var i = 0; i < notes.length; i++) {
+      var parts = String(notes[i]).split(":"), key = "n_" + parts[0], x = parts.slice(1).join(":");
+      if (T.en[key]) { lines.push(t(key, { x: x })); }
+      if (parts[0] !== "MATCH" && parts[0] !== "WHY_ITEM" && parts[0] !== "DECISION") { warn = true; }
+    }
+    return { key: "saved", kind: warn ? "warn" : "good", lines: lines };
+  }
+
+  function sendStep(step, nothing) {
+    if (S.busy) { return; }
+    var noteText = "";
+    var extra = step === "review" || step === "statement", openNow = S.open;
+    if (step === "close") { var n = el("closeNote"); noteText = n ? String(n.value || "").trim() : ""; }
+    S.busy = true; S.msg = null; render();
+    post({ op: "t_step", tok: S.tok, p: S.code, step: step, result: nothing ? "nothing" : "done", note: noteText, rid: newId() }, function (r) {
+      S.busy = false;
+      if (signedOut(r)) { return; }
+      take(r);
+      if (!r.ok) { S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad" }; render(); return; }
+      // A weekly or monthly check leaves the day where it was.
+      if (extra) { S.open = openNow; render(); return; }
+      // On to the next step that is still open.
+      var L = S.data.steps || [], at = L.indexOf(step);
+      S.open = "";
+      for (var i = at + 1; i < L.length; i++) { if (!(S.data.done || {})[L[i]]) { S.open = L[i]; break; } }
+      render();
+      var node = S.open ? el("step_" + S.open) : null;
+      if (node && node.scrollIntoView) { node.scrollIntoView({ block: "start" }); }
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+
+  /* ---------- the review queue ---------- */
+
+  function queueView() {
+    var Q = S.queue, i, h = "<div class='wrap pad'><button type='button' class='back' data-act='home'>‹ " + esc(t("myDay")) + "</button><h1 class='title serif'>" + esc(t("queueT")) + "</h1>" + msgBox();
+    if (!Q.waiting.length) { h += "<p class='empty'>" + esc(t("queueNone")) + "</p>"; }
+    for (i = 0; i < Q.waiting.length; i++) {
+      var q = Q.waiting[i], dis = S.busy ? " disabled" : "";
+      h += "<div class='card' id='q_" + esc(q.id) + "'><div class='r' style='margin:0 0 4px'>" + esc([q.pname, t("k_" + q.kind), t("qBy", { who: q.by, t: day(q.when) })].join(" · ")) + "</div>";
+      if (q.kind === "summary" && q.data && Q.canApprove) {
+        h += "<p class='hint' style='margin:0'>" + esc(t("editS")) + "</p><div>" + tag(tx(q.data.kind)) + pill(q.data.status) + "</div>";
+        var blocks = [["happened", "b_happened"], ["did", "b_did"], ["attention", "b_attention"], ["need", "b_need"]];
+        for (var b = 0; b < blocks.length; b++) {
+          h += "<label class='l' for='qs_" + esc(q.id) + "_" + blocks[b][0] + "'>" + esc(t(blocks[b][1])) + "</label><textarea id='qs_" + esc(q.id) + "_" + blocks[b][0] + "' maxlength='1200'" + dis + ">" + esc(q.data[blocks[b][0]] || "") + "</textarea>";
+        }
+      } else { h += "<div class='t' style='font-size:16px'>" + esc(q.what) + "</div>"; }
+      if (Q.canApprove) {
+        h += "<button type='button' class='btn navy' data-approve='" + esc(q.id) + "'" + dis + ">" + esc(t("approve")) + "</button>" +
+          "<label class='l' for='qn_" + esc(q.id) + "'>" + esc(t("retL")) + "</label><input class='f' id='qn_" + esc(q.id) + "' type='text' maxlength='500' autocomplete='off'" + dis + ">" +
+          "<button type='button' class='btn' data-return='" + esc(q.id) + "'" + dis + ">" + esc(t("ret")) + "</button>";
+      }
+      h += "</div>";
+    }
+    if (Q.recent.length) {
+      h += "<h2>" + esc(t("recent")) + "</h2>";
+      for (i = 0; i < Q.recent.length; i++) {
+        var r = Q.recent[i];
+        h += "<div class='item'><div class='h' style='font-size:15px'>" + esc(r.what) + "</div><div class='m'>" + esc([r.pname, t("k_" + r.kind), r.by].join(" · ")) + "</div>" +
+          tag(t("q_" + r.status) + (r.revBy ? ": " + r.revBy : ""), r.status === "Approved" ? "g" : "r") + (r.note ? note(t("retL"), r.note) : "") + "</div>";
+      }
+    }
+    return h + "</div>";
+  }
+
+  function sendReview(id, action) {
+    if (S.busy) { return; }
+    var body = { op: "t_review", tok: S.tok, qid: id, action: action, rid: newId() }, q = null, i;
+    for (i = 0; i < S.queue.waiting.length; i++) { if (S.queue.waiting[i].id === id) { q = S.queue.waiting[i]; } }
+    var n = el("qn_" + id);
+    body.note = n ? String(n.value || "").trim() : "";
+    if (action === "approve" && q && q.kind === "summary" && q.data) {
+      var data = { kind: q.data.kind, status: q.data.status }, keys = ["happened", "did", "attention", "need"];
+      for (i = 0; i < keys.length; i++) { var a = el("qs_" + id + "_" + keys[i]); data[keys[i]] = a ? String(a.value || "").trim() : (q.data[keys[i]] || ""); }
+      body.data = data;
+    }
+    S.busy = true; S.msg = null; render();
+    post(body, function (r) {
+      S.busy = false;
+      if (signedOut(r)) { return; }
+      take(r);
+      if (r.ok && r.done) {
+        S.msg = r.done.already ? { key: "already", kind: "warn" } : { key: action === "approve" ? "approved" : "returned", kind: "good", lines: [r.done.what].concat(noteLines(r.done.notes)) };
+        if (S.home && S.home.waiting) { S.home.waiting = S.queue.waiting.length; }
+      } else {
+        S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad", detail: r.detail || "" };
+      }
+      render(); window.scrollTo(0, 0);
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+  function noteLines(notes) {
+    var out = [];
+    for (var i = 0; i < (notes || []).length; i++) { var parts = String(notes[i]).split(":"), key = "n_" + parts[0]; if (T.en[key]) { out.push(t(key, { x: parts.slice(1).join(":") })); } }
+    return out;
+  }
+
+  /* ---------- taps ---------- */
+
+  function setLang() {
+    capture();
+    S.lang = S.lang === "es" ? "en" : "es";
+    remember("lang", S.lang);
+    render();
+    if (S.view === "signin") { drawGoogle(); }
+  }
+
+  document.addEventListener("click", function (ev) {
+    var n = ev.target, names = ["data-act", "data-prop", "data-step", "data-form", "data-done", "data-nothing", "data-approve", "data-return"];
+    var hit = function (node) { for (var i = 0; i < names.length; i++) { if (node.getAttribute(names[i]) !== null) { return names[i]; } } return ""; };
+    while (n && n !== document.body && !(n.getAttribute && hit(n))) { n = n.parentNode; }
+    if (!n || n === document.body || !n.getAttribute || n.disabled) { return; }
+    var which = hit(n), val = n.getAttribute(which), arg = n.getAttribute("data-arg");
+    if (which === "data-prop") { openProp(val); return; }
+    if (which === "data-step") { S.open = S.open === val ? "" : val; S.msg = null; render(); return; }
+    if (which === "data-form") { openForm(val, arg); return; }
+    if (which === "data-done") { sendStep(val, false); return; }
+    if (which === "data-nothing") { sendStep(val, true); return; }
+    if (which === "data-approve") { sendReview(val, "approve"); return; }
+    if (which === "data-return") { sendReview(val, "return"); return; }
+    if (val === "back") { stepBack(); return; }
+    if (val === "home") { S.form = null; S.msg = null; go("home"); loadHome(true); return; }
+    if (val === "lang") { setLang(); return; }
+    if (val === "retry") { if (S.msg && S.msg.retry) { S.msg.retry(); } return; }
+    if (val === "gretry") { S.gFail = false; render(); google1(); return; }
+    if (val === "refresh") { loadHome(); return; }
+    if (val === "queue") { loadQueue(); return; }
+    if (val === "submit") { submitForm(false); return; }
+    if (val === "again") { submitForm(true); return; }
+  });
+  // A choice that changes which boxes the form shows.
+  document.addEventListener("change", function (ev) {
+    if (ev.target && ev.target.getAttribute && ev.target.getAttribute("data-redraw")) { capture(); render(); }
+  });
+  el("lang").onclick = setLang;
+  el("out").onclick = signOut;
+  // Coming back to a list that was left open: show it as it is now.
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible" && S.tok && S.view === "home" && !S.busy) { loadHome(true); }
+  });
+
+  function start2() {
+    if (S.tok) { loadHome(); } else { hello(); }
+  }
+
+  function start() {
+    var saved = recall("lang");
+    var nav = String(navigator.language || "").toLowerCase();
+    S.lang = saved === "es" || saved === "en" ? saved : (nav.indexOf("es") === 0 ? "es" : "en");
+    // The time clock sends the person here with the property they clocked in to: #p=CDH
+    var m = /[#&]p=([A-Za-z0-9]{2,6})/.exec(String(window.location.hash || ""));
+    S.want = m ? m[1].toUpperCase() : "";
+    try { window.history.replaceState({ view: "home" }, "", window.location.pathname); } catch (e) {}
+    S.tok = recall("tok");
+    // The client ID is needed whenever the sign-in screen has to be shown, so it is asked for at the start.
+    post({ op: "t_hello" }, function (r) {
+      take(r);
+      if (S.tok) { loadHome(); return; }
+      if (!r.ok || !S.clientId) { S.view = "error"; S.msg = { key: r.ok ? "NOT_SET_UP" : "SERVER", retry: hello }; render(); return; }
+      S.view = "signin"; render(); google1();
+    }, function () { S.view = "error"; S.msg = { key: "NET", retry: start2 }; render(); });
+    render();
+  }
+
+  start();
+</script>
+</body>
+</html>
