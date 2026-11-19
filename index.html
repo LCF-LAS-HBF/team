@@ -204,6 +204,32 @@
       queueT: "Waiting for approval", queueNone: "Nothing is waiting.", recent: "Decided lately", approve: "Approve and post", ret: "Return with a note", retL: "What should be corrected",
       approved: "Approved and posted.", returned: "Returned.", already: "This was already decided.", editS: "You can correct the words before approving.",
       k_bank: "Bank balance", k_deposit: "Deposit or withdrawal", k_bill: "Bill", k_paid: "Payment", k_decision: "Owner decision", k_summary: "Summary",
+      s_mail: "Mail", h_mail: "What the house sent, and mail to handle", b_mail: "Mail collected",
+      mNoTab: "Mail capture is on for this property, but its Portfolio has no Mail tab yet. The office adds it with Prepare a Portfolio.",
+      mNoClock: "The time clock could not be read, so sends from the house are not shown. Log mail that reached you another way below.",
+      mSends: "Sent from the house, to check", mNoSends: "Nothing from the house is waiting.", mSendBy: "{who}, {t}", mPieces: "{n} piece(s) said, {p} photo(s)",
+      mLogged: "{n} logged from this send", mHouseNote: "Note from the house", mPhoto: "Photo {n}", bLogFrom: "Log a piece from this send", bCheck: "Check this send",
+      mOpenT: "Mail to handle", mNoOpen: "No mail is waiting to be handled.", mRecent: "Handled lately", bLogMail: "Log mail that came another way",
+      mTellT: "Tell the owner", mTellP: "The owner asked to hear about new mail by text or WhatsApp. Tap to open the message from the LAS phone, send it, then tap Owner told.",
+      mTo: "{chan} to {who}", mNoNumber: "No WhatsApp or phone number on the Owners tab for this property.", bTold: "Owner told",
+      mPolicy: "What to open", mOrig: "Paper originals", mNeeds: "Needs", mScan: "Scan", mNoScan: "No scan yet", mMin: "{n} min",
+      f_mail: "Log a piece of mail", f_mail_update: "Update the mail", f_mail_check: "Check the send", f_mail_told: "The owner was told",
+      l_send: "From the house's send", o_noSend: "Not from a send (it reached LAS another way)", l_mfrom: "From (sender)", l_mtype: "Type", l_mwhat: "What it is",
+      h_mwhat: "Plain words the owner reads, like: Electric bill for October, due Nov 28. No account numbers.", l_needs: "What it needs",
+      l_scan: "Link to the scan", h_scan: "Save the scan in the owner's Mail folder in Google Drive and paste its link. Starts with https://",
+      l_minutes: "Minutes spent on it", h_minutes: "Filled in from the time this form has been open. Change it if it is wrong.", l_did: "What LAS did (optional)",
+      l_payFrom: "Who pays it", l_ask: "What the owner must decide or do", h_ask: "Leave blank to ask the owner later.",
+      l_mstatus: "Status", l_original: "Paper original", l_addMin: "Minutes to add (optional)", l_counted: "Pieces LAS counted in the photos",
+      h_counted: "Count the pieces in the photos, not the number the house typed.", l_cnote: "Note", h_cnote: "Required when your count is different: what happened.",
+      l_told: "How the owner was told", sureM: "The owner sees this on their dashboard as soon as it is saved.",
+      NO_MAIL: "Mail capture is not on for this property.", CHECKED: "This send was already checked.",
+      n_MAIL_ID: "Logged as {x}.", n_BILL_MADE: "The bill was added to Bills and the house ledger.", n_BILL_QUEUED: "The bill was sent for approval ({x}).",
+      n_DECISION_QUEUED: "The decision was sent for approval ({x}).", n_OFFICE_PAY: "The office adds the bill from this piece of mail.",
+      n_OFFICE_ACT: "The office follows up with the owner.", n_PAY_LATER: "No amount was typed. Add the bill under Bills and the house ledger, with the mail ID in the description.",
+      n_ACT_LATER: "Ask the owner from Bills and the house ledger, or in a summary, with the mail ID as the reference.",
+      n_BILL_NOT_MADE: "The bill could not be made ({x}). Add it under Bills and the house ledger.", n_DECISION_NOT_MADE: "The decision could not be made ({x}). Ask the owner another way.",
+      n_MISMATCH: "The count does not match. The principals were emailed and it is on the audit.",
+      k_mail: "Mail", k_mail_update: "Mail update", k_mail_check: "Send checked",
       q_Waiting: "Waiting", q_Approved: "Approved", q_Returned: "Returned", md: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     },
     es: {
@@ -292,6 +318,32 @@
       queueT: "En espera de aprobación", queueNone: "No hay nada en espera.", recent: "Decididos recientemente", approve: "Aprobar y publicar", ret: "Devolver con una nota", retL: "Qué se debe corregir",
       approved: "Aprobado y publicado.", returned: "Devuelto.", already: "Esto ya se había decidido.", editS: "Puede corregir las palabras antes de aprobar.",
       k_bank: "Saldo del banco", k_deposit: "Depósito o retiro", k_bill: "Cuenta", k_paid: "Pago", k_decision: "Decisión del propietario", k_summary: "Resumen",
+      s_mail: "Correo", h_mail: "Lo que envió la casa y el correo por atender", b_mail: "Correo recogido",
+      mNoTab: "El correo está activado para esta propiedad, pero su Portafolio aún no tiene la pestaña Mail. La oficina la agrega con Prepare a Portfolio.",
+      mNoClock: "No se pudo leer el reloj, así que no se muestran los envíos de la casa. Registre abajo el correo que le llegó por otra vía.",
+      mSends: "Enviado desde la casa, por revisar", mNoSends: "No hay nada de la casa en espera.", mSendBy: "{who}, {t}", mPieces: "{n} pieza(s) según la casa, {p} foto(s)",
+      mLogged: "{n} registrada(s) de este envío", mHouseNote: "Nota de la casa", mPhoto: "Foto {n}", bLogFrom: "Registrar una pieza de este envío", bCheck: "Revisar este envío",
+      mOpenT: "Correo por atender", mNoOpen: "No hay correo por atender.", mRecent: "Atendido recientemente", bLogMail: "Registrar correo que llegó por otra vía",
+      mTellT: "Avisar al propietario", mTellP: "El propietario pidió saber del correo nuevo por texto o WhatsApp. Toque para abrir el mensaje desde el teléfono de LAS, envíelo y luego toque Propietario avisado.",
+      mTo: "{chan} a {who}", mNoNumber: "No hay número de WhatsApp ni de teléfono en la pestaña Owners para esta propiedad.", bTold: "Propietario avisado",
+      mPolicy: "Qué se abre", mOrig: "Originales en papel", mNeeds: "Necesita", mScan: "Escaneo", mNoScan: "Aún sin escaneo", mMin: "{n} min",
+      f_mail: "Registrar una pieza de correo", f_mail_update: "Actualizar el correo", f_mail_check: "Revisar el envío", f_mail_told: "Se avisó al propietario",
+      l_send: "Del envío de la casa", o_noSend: "No viene de un envío (llegó a LAS por otra vía)", l_mfrom: "De (remitente)", l_mtype: "Tipo", l_mwhat: "Qué es",
+      h_mwhat: "Palabras sencillas que lee el propietario, como: Cuenta de luz de octubre, vence el 28 de nov. Sin números de cuenta.", l_needs: "Qué necesita",
+      l_scan: "Enlace al escaneo", h_scan: "Guarde el escaneo en la carpeta Mail del propietario en Google Drive y pegue su enlace. Empieza con https://",
+      l_minutes: "Minutos dedicados", h_minutes: "Se llena con el tiempo que este formulario ha estado abierto. Cámbielo si no es correcto.", l_did: "Qué hizo LAS (opcional)",
+      l_payFrom: "Quién la paga", l_ask: "Qué debe decidir o hacer el propietario", h_ask: "Déjelo en blanco para preguntarle al propietario después.",
+      l_mstatus: "Estado", l_original: "Original en papel", l_addMin: "Minutos que agregar (opcional)", l_counted: "Piezas que LAS contó en las fotos",
+      h_counted: "Cuente las piezas en las fotos, no el número que escribió la casa.", l_cnote: "Nota", h_cnote: "Obligatoria si su conteo es diferente: qué pasó.",
+      l_told: "Cómo se avisó al propietario", sureM: "El propietario lo ve en su panel en cuanto se guarda.",
+      NO_MAIL: "El correo no está activado para esta propiedad.", CHECKED: "Este envío ya se revisó.",
+      n_MAIL_ID: "Registrado como {x}.", n_BILL_MADE: "La cuenta se agregó a Cuentas y libro de la casa.", n_BILL_QUEUED: "La cuenta se envió para aprobación ({x}).",
+      n_DECISION_QUEUED: "La decisión se envió para aprobación ({x}).", n_OFFICE_PAY: "La oficina agrega la cuenta de esta pieza de correo.",
+      n_OFFICE_ACT: "La oficina da seguimiento con el propietario.", n_PAY_LATER: "No se escribió un monto. Agregue la cuenta en Cuentas y libro de la casa, con el ID del correo en la descripción.",
+      n_ACT_LATER: "Pregúntele al propietario desde Cuentas y libro de la casa, o en un resumen, con el ID del correo como referencia.",
+      n_BILL_NOT_MADE: "No se pudo crear la cuenta ({x}). Agréguela en Cuentas y libro de la casa.", n_DECISION_NOT_MADE: "No se pudo crear la decisión ({x}). Pregúntele al propietario de otra forma.",
+      n_MISMATCH: "El conteo no coincide. Se envió un correo a los principales y queda en la auditoría.",
+      k_mail: "Correo", k_mail_update: "Actualización de correo", k_mail_check: "Envío revisado",
       q_Waiting: "En espera", q_Approved: "Aprobado", q_Returned: "Devuelto", md: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
     }
   };
@@ -312,7 +364,16 @@
     "Utility": "Servicios públicos", "Service": "Servicio", "Maintenance": "Mantenimiento", "Tax": "Impuestos", "Other": "Otro",
     "Included visit due": "Visita incluida pendiente", "Maintenance due": "Mantenimiento por vencer", "Project": "Proyecto", "Visit to bill": "Visita por facturar",
     "Owner decision": "Decisión del propietario", "Owner arriving": "Llega el propietario", "Service interruption": "Interrupción del servicio",
-    "Expected bill not recorded": "Cuenta esperada sin registrar", "House Wallet below its trigger": "House Wallet bajo su mínimo", "Paid above its NTE": "Pagada sobre su NTE"
+    "Expected bill not recorded": "Cuenta esperada sin registrar", "House Wallet below its trigger": "House Wallet bajo su mínimo", "Paid above its NTE": "Pagada sobre su NTE",
+    "Bill": "Cuenta", "Bank or financial": "Banco o finanzas", "Government or tax": "Gobierno o impuestos", "Insurance": "Seguro", "Legal": "Legal", "Personal": "Personal",
+    "Package": "Paquete", "Advertising": "Publicidad", "File only": "Solo archivar", "Pay": "Pagar", "Owner must act": "El propietario debe actuar", "Done": "Hecho",
+    "At the house": "En la casa", "In the LAS box": "En la caja de LAS", "Shipped to the owner": "Enviado al propietario", "Given to the owner": "Entregado al propietario", "Shredded": "Triturado",
+    "Email": "Correo electrónico", "Text": "Texto", "WhatsApp": "WhatsApp", "Dashboard": "Panel", "The house": "La casa", "PO Box": "Apartado postal",
+    "Open bills and official mail; envelope only for personal mail": "Abrir cuentas y correo oficial; solo el sobre del correo personal", "Envelope only for everything": "Solo el sobre de todo",
+    "Open everything": "Abrir todo", "Keep at the house, shred after 90 days": "Guardar en la casa y triturar después de 90 días", "Keep at the house, do not shred": "Guardar en la casa, sin triturar",
+    "Ship to the owner in the LAS box": "Enviar al propietario en la caja de LAS",
+    "Mail setup": "Configuración del correo", "Mail send to check": "Envío de correo por revisar", "Mail to handle": "Correo por atender", "Mail count did not match": "El conteo de correo no coincidió",
+    "Mail original to shred": "Original de correo por triturar"
   };
   // The Help screen: the training for a new team member, in both languages.
   // A word in {braces} is replaced by the label this page shows for it; {c_open#3} also fills in its number.
@@ -392,6 +453,7 @@
       en: ["The steps, in order", [
         ["", HELP_STEP_LEAD.en],
         ["{s_came}", "Read today's messages from house staff, contractors and the owner. The step shows the note left yesterday, what the owner did on the dashboard, any call the owner asked for, and who is on the clock."],
+        ["{s_mail}", "Only where the property has mail capture. Check what the house sent from the time clock and log each piece. See “Mail” below."],
         ["{s_bank}", "Only where the property has an active House Wallet. Look at the account in the bank's own app or site, then tap {bBank}. Use {bDeposit} when the owner puts money in or takes money out. The page never reads the bank for you."],
         ["{s_bills}", "{bAddBill} when a bill arrives. {bPaid} once it is paid; a payment by LAS needs the link to the receipt. {bDecision} when the owner must choose."],
         ["{s_repairs}", "{bUpdate} each open item: its status, how LAS looked at it, the next step, who has it, and the link to the photo folder. {bAddItem} for something new."],
@@ -403,6 +465,7 @@
       es: ["Los pasos, en orden", [
         ["", HELP_STEP_LEAD.es],
         ["{s_came}", "Lea los mensajes de hoy del personal de la casa, los contratistas y el propietario. El paso muestra la nota que dejaron ayer, lo que hizo el propietario en su panel, si pidió una llamada y quién está en turno."],
+        ["{s_mail}", "Solo donde la propiedad tiene el servicio de correo. Revise lo que la casa envió desde el reloj y registre cada pieza. Vea «Correo» más abajo."],
         ["{s_bank}", "Solo donde la propiedad tiene un House Wallet activo. Mire la cuenta en la aplicación o el sitio del banco y toque {bBank}. Use {bDeposit} cuando el propietario pone o retira dinero. La página nunca lee el banco por usted."],
         ["{s_bills}", "{bAddBill} cuando llega una cuenta. {bPaid} cuando ya se pagó; un pago de LAS necesita el enlace al recibo. {bDecision} cuando el propietario debe elegir."],
         ["{s_repairs}", "{bUpdate} cada asunto abierto: su estado, cómo lo revisó LAS, el siguiente paso, quién lo tiene y el enlace a la carpeta de fotos. {bAddItem} para algo nuevo."],
@@ -412,17 +475,48 @@
         ["{s_close}", "{closeP}"]
       ]] },
     { id: "steps", who: "field",
-      en: ["Your three steps", [
+      en: ["Your steps", [
         ["", HELP_STEP_LEAD.en],
         ["{s_came}", "Read today's messages. The step shows the note left yesterday and who is on the clock."],
+        ["{s_mail}", "Only where the property has mail capture. Check what the house sent and log each piece. See “Mail” below."],
         ["{s_repairs}", "{bUpdate} each open item: its status, how LAS looked at it, the next step, who has it, and the link to the photo folder. {bAddItem} for something new. The owner sees it as soon as you save."],
         ["{s_close}", "{closeP}"]
       ]],
-      es: ["Sus tres pasos", [
+      es: ["Sus pasos", [
         ["", HELP_STEP_LEAD.es],
         ["{s_came}", "Lea los mensajes de hoy. El paso muestra la nota que dejaron ayer y quién está en turno."],
+        ["{s_mail}", "Solo donde la propiedad tiene el servicio de correo. Revise lo que envió la casa y registre cada pieza. Vea «Correo» más abajo."],
         ["{s_repairs}", "{bUpdate} cada asunto abierto: su estado, cómo lo revisó LAS, el siguiente paso, quién lo tiene y el enlace a la carpeta de fotos. {bAddItem} para algo nuevo. El propietario lo ve en cuanto usted guarda."],
         ["{s_close}", "{closeP}"]
+      ]] },
+    { id: "mail", who: "",
+      en: ["Mail", [
+        ["How mail reaches you", "House staff tap {b_mail} on the time clock, type how many pieces they picked up, and send a photo of each. Each send shows under {mSends}."],
+        ["1. Open the photos", "Tap each photo. Count the pieces yourself."],
+        ["2. Log each piece", "{bLogFrom}: who it is from, the type, what it is in plain words, and what it needs. The owner reads it, so no account numbers. Personal mail is logged by the sender only and is never opened."],
+        ["3. Check the send", "{bCheck} and type the pieces you counted. If your count is different, say what happened. The principals are emailed, and it goes on the house staff audit."],
+        ["What it needs", "File only: nothing to do. Pay: a bill. Owner must act: the owner decides or does something. Personal: kept unopened.", "money"],
+        ["What it needs", "File only: nothing to do. Pay: the office takes it from there. Owner must act: the owner decides or does something. Personal: kept unopened.", "field"],
+        ["A bill", "Type the amount, the currency and the due date, and the page adds the bill to {s_bills}. It waits for a principal like any bill.", "money"],
+        
+        ["The scan", "Save the scan in the owner's Mail folder in Google Drive and paste its link. The house photos stay in the LAS folder."],
+        ["The minutes", "The form counts the minutes it was open. Fix the number if you were interrupted. It is how LAS prices the mail service; the owner never sees it."],
+        ["{mTellT}", "When the owner chose text or WhatsApp, tap the message, send it from the LAS phone, then tap {bTold}. Email is sent by itself every hour."],
+        ["The paper", "Originals stay at the house where LAS showed the staff. After 90 days they are shredded, unless the owner chose otherwise. When an original is shredded, given or shipped, update it."]
+      ]],
+      es: ["Correo", [
+        ["Cómo le llega el correo", "El personal de la casa toca {b_mail} en el reloj, escribe cuántas piezas recogió y envía una foto de cada una. Cada envío aparece en {mSends}."],
+        ["1. Abra las fotos", "Toque cada foto. Cuente las piezas usted mismo."],
+        ["2. Registre cada pieza", "{bLogFrom}: de quién es, el tipo, qué es en palabras sencillas y qué necesita. El propietario lo lee, así que sin números de cliente ni de tarjeta. El correo personal se registra solo con el remitente y nunca se abre."],
+        ["3. Revise el envío", "{bCheck} y escriba las piezas que contó. Si su conteo es diferente, diga qué pasó. Se envía un correo a los principales y queda en la auditoría del personal de la casa."],
+        ["Qué necesita", "Solo archivar: nada que hacer. Pagar: una cuenta. El propietario debe actuar: el propietario decide o hace algo. Personal: se guarda sin abrir.", "money"],
+        ["Qué necesita", "Solo archivar: nada que hacer. Pagar: la oficina se encarga. El propietario debe actuar: el propietario decide o hace algo. Personal: se guarda sin abrir.", "field"],
+        ["Una cuenta", "Escriba el monto, la moneda y la fecha de vencimiento, y la página agrega la cuenta a {s_bills}. Espera a un principal como cualquier cuenta.", "money"],
+        
+        ["El escaneo", "Guarde el escaneo en la carpeta Mail del propietario en Google Drive y pegue su enlace. Las fotos de la casa quedan en la carpeta de LAS."],
+        ["Los minutos", "El formulario mide los minutos que estuvo abierto. Corrija el número si lo interrumpieron. Así LAS pone precio al servicio de correo; el propietario nunca lo ve."],
+        ["{mTellT}", "Cuando el propietario eligió texto o WhatsApp, toque el mensaje, envíelo desde el teléfono de LAS y luego toque {bTold}. El correo electrónico se envía solo cada hora."],
+        ["El papel", "Los originales se quedan en la casa donde LAS le indicó al personal. Después de 90 días se trituran, salvo que el propietario haya elegido otra cosa. Cuando un original se tritura, se entrega o se envía, actualícelo."]
       ]] },
     { id: "over", who: "money",
       en: ["A bill above its limit", [
@@ -500,7 +594,10 @@
       ]] }
   ];
 
-  var STEP_ORDER = ["came", "bank", "bills", "repairs", "coming", "fix", "summary", "close"];
+  var STEP_ORDER = ["came", "mail", "bank", "bills", "repairs", "coming", "fix", "summary", "close"];
+  var MAIL_TYPES = ["Bill", "Bank or financial", "Government or tax", "Insurance", "Legal", "Personal", "Package", "Advertising", "Other"];
+  var MAIL_NEEDS = ["File only", "Pay", "Owner must act", "Personal"];
+  var MAIL_ORIGINAL = ["At the house", "In the LAS box", "Shipped to the owner", "Given to the owner", "Shredded"];
   var ACT_STATUS = ["Open", "Watching", "Scheduled", "Vendor Reported Complete", "Complete", "Verified Complete", "Closed"];
   var CATEGORIES = ["Utility", "Service", "Maintenance", "Repair", "Tax", "Other"];
   var TYPES = ["Repair", "Chore", "Vendor Visit", "Field Visit", "Note"];
@@ -882,6 +979,7 @@
     if (step === "coming") { n = (D.coming || []).length; }
     if (step === "fix") { n = (D.fix || []).length + (D.held || []).length; }
     if (step === "summary") { n = (D.summary && D.summary.due ? 1 : 0) + (remindOf("review") ? 1 : 0); }
+    if (step === "mail" && D.mail) { n = (D.mail.sends || []).length + (D.mail.open || []).length + (D.mail.tell || []).length; }
     return n;
   }
 
@@ -894,6 +992,7 @@
     if (!open) { return h + "</div>"; }
     h += "<div class='body'>";
     if (step === "came") { h += cameBody(); }
+    else if (step === "mail") { h += mailBody(); }
     else if (step === "bank") { h += bankBody(); }
     else if (step === "bills") { h += billsBody(); }
     else if (step === "repairs") { h += repairsBody(); }
@@ -936,6 +1035,66 @@
     if ((K.review || []).length) {
       h += "<h2>" + esc(t("review")) + "</h2>";
       for (i = 0; i < K.review.length; i++) { h += "<div class='item'><div class='h'>" + esc(K.review[i].name) + "</div><div class='m'>" + esc(day(K.review[i].day) + " · " + K.review[i].what) + "</div></div>"; }
+    }
+    return h;
+  }
+
+  function mailItem(m, canUpdate) {
+    var u = href(m.url);
+    return "<div class='item'><div class='h'>" + esc(m.id + " · " + m.from) + "</div><div class='m'>" + esc([day(m.date), tx(m.type), m.send, m.minutes !== undefined ? t("mMin", { n: m.minutes }) : ""].filter(Boolean).join(" · ")) + "</div>" +
+      (m.what ? "<div style='font-size:15px;margin:4px 0'>" + esc(m.what) + "</div>" : "") +
+      tag(tx(m.needs), m.needs === "Pay" || m.needs === "Owner must act" ? "r" : "") + tag(tx(m.status), m.status === "Done" ? "g" : "w") + (m.original ? tag(tx(m.original)) : "") +
+      note(t("l_did"), m.did) +
+      (u ? "<div class='hint'>" + esc(t("mScan")) + ": <a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + esc(t("open")) + "</a></div>" : (m.type !== "Personal" && m.type !== "Advertising" ? "<div class='hint'>" + esc(t("mNoScan")) + "</div>" : "")) +
+      (canUpdate ? "<button type='button' class='btn small' data-form='mail_update' data-arg='" + esc(m.row) + "'>" + esc(t("bUpdate")) + "</button>" : "") + "</div>";
+  }
+
+  function mailBody() {
+    var M = S.data.mail || {}, i, k, h = "";
+    if (!M.tab) { return "<div class='box warn'>" + esc(t("mNoTab")) + "</div>"; }
+    for (i = 0; i < (M.alerts || []).length; i++) {
+      var al = M.alerts[i];
+      h += "<div class='box warn'><b>" + esc(tx(al.kind)) + "</b><br>" + esc(al.what) + (al.check ? "<br>" + esc(al.check) : "") + (al.next ? "<br>" + esc(al.next) : "") + "</div>";
+    }
+    if (M.setup && (M.setup.open || M.setup.originals)) {
+      h += note(t("mPolicy"), tx(M.setup.open)) + note(t("mOrig"), tx(M.setup.originals));
+    }
+    if (!M.clock) { h += "<div class='box info'>" + esc(t("mNoClock")) + "</div>"; }
+    h += "<h2>" + esc(t("mSends")) + "</h2>";
+    if (!(M.sends || []).length) { h += "<p class='empty'>" + esc(t("mNoSends")) + "</p>"; }
+    for (i = 0; i < (M.sends || []).length; i++) {
+      var s = M.sends[i], ph = "";
+      for (k = 0; k < (s.links || []).length; k++) {
+        var lu = href(s.links[k]);
+        if (lu) { ph += "<a class='btn small' style='display:inline-block;width:auto;margin:6px 6px 0 0' href='" + esc(lu) + "' target='_blank' rel='noopener noreferrer'>" + esc(t("mPhoto", { n: k + 1 })) + "</a>"; }
+      }
+      h += "<div class='card' style='border-color:#d5dbe1'><div class='r' style='margin:0'>" + esc(s.id) + "</div>" +
+        "<div class='t' style='font-size:16px'>" + esc(t("mSendBy", { who: s.worker, t: (isDay(String(s.sent).substr(0, 10)) ? day(String(s.sent).substr(0, 10)) : "") + (String(s.sent).length >= 16 ? ", " + clock(String(s.sent).substr(11, 5)) : "") })) + "</div>" +
+        "<div class='m' style='font-size:14px'>" + esc(t("mPieces", { n: s.pieces, p: s.photos })) + " · " + esc(t("mLogged", { n: s.logged })) + "</div>" +
+        note(t("mHouseNote"), s.note) + "<div>" + ph + "</div>" +
+        "<button type='button' class='btn small navy' data-form='mail' data-arg='" + esc(s.id) + "'>" + esc(t("bLogFrom")) + "</button>" +
+        "<button type='button' class='btn small' data-form='mail_check' data-arg='" + esc(s.id) + "'>" + esc(t("bCheck")) + "</button></div>";
+    }
+    if ((M.tell || []).length) {
+      h += "<h2>" + esc(t("mTellT")) + "</h2><p class='hint'>" + esc(t("mTellP")) + "</p>";
+      for (i = 0; i < M.tell.length; i++) {
+        var w = M.tell[i];
+        h += "<div class='item'><div class='h'>" + esc(w.id) + "</div><div class='m'>" + esc(w.line) + "</div>";
+        if (w.noNumber) { h += "<div class='box warn'>" + esc(t("mNoNumber")) + "</div>"; }
+        for (k = 0; k < (w.links || []).length; k++) {
+          var lk = w.links[k], safe = /^(https:[/][/]wa[.]me[/]|sms:)/.test(String(lk.url)) ? String(lk.url) : "";
+          if (safe) { h += "<a class='btn small' style='display:inline-block;width:auto;margin:6px 6px 0 0' href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer'>" + esc(t("mTo", { chan: tx(lk.chan), who: lk.to })) + "</a>"; }
+        }
+        h += "<button type='button' class='btn small' data-form='mail_told' data-arg='" + esc(w.row) + "'>" + esc(t("bTold")) + "</button></div>";
+      }
+    }
+    h += "<h2>" + esc(t("mOpenT")) + "</h2>";
+    if (!(M.open || []).length) { h += "<p class='empty'>" + esc(t("mNoOpen")) + "</p>"; }
+    for (i = 0; i < (M.open || []).length; i++) { h += mailItem(M.open[i], true); }
+    h += "<button type='button' class='btn' data-form='mail'>" + esc(t("bLogMail")) + "</button>";
+    if ((M.recent || []).length) {
+      h += "<h2>" + esc(t("mRecent")) + "</h2>";
+      for (i = 0; i < M.recent.length; i++) { h += mailItem(M.recent[i], true); }
     }
     return h;
   }
@@ -1162,6 +1321,40 @@
         { id: "how", type: "select", label: "l_how", options: [opt("", t("o_none")), opt("person", t("o_person")), opt("pictures", t("o_pictures"))], value: "" },
         { id: "next", type: "text", label: "l_next", value: a.next || "" }, { id: "who", type: "text", label: "l_who", value: a.who || "" },
         { id: "evidence", type: "text", label: "l_evidence", value: a.evidence || a.url || "" }];
+    } else if (kind === "mail") {
+      var Mm = D.mail || {}, sendOpts = [opt("", t("o_noSend"))], money = role() !== "Field";
+      for (i = 0; i < (Mm.sends || []).length; i++) { sendOpts.push(opt(Mm.sends[i].id, Mm.sends[i].id + " · " + Mm.sends[i].worker)); }
+      if (init.send && !findSend(init.send)) { sendOpts.push(opt(init.send, init.send)); }
+      var mtype = init.type || "Bill", mneeds = init.needs || (mtype === "Personal" ? "Personal" : (mtype === "Advertising" ? "File only" : "File only"));
+      F = [{ id: "send", type: "select", label: "l_send", options: sendOpts, value: init.send || "" }, { id: "date", type: "date", label: "l_date", value: today },
+        { id: "from", type: "text", label: "l_mfrom" }, { id: "type", type: "select", label: "l_mtype", options: MAIL_TYPES.map(function (x) { return opt(x, tx(x)); }), value: mtype, redraw: true }];
+      if (mtype !== "Personal") { F.push({ id: "what", type: "text", label: "l_mwhat", hint: "h_mwhat" }); }
+      if (mtype !== "Personal") { F.push({ id: "needs", type: "select", label: "l_needs", options: MAIL_NEEDS.filter(function (x) { return x !== "Personal"; }).map(function (x) { return opt(x, tx(x)); }), value: mneeds === "Personal" ? "File only" : mneeds, redraw: true }); }
+      if (mtype !== "Personal") { F.push({ id: "scan", type: "url", label: "l_scan", hint: "h_scan" }); }
+      if (money && mtype !== "Personal" && mneeds === "Pay") {
+        var canW = !!(W.on && W.ready);
+        F.push({ id: "amount", type: "money", label: "l_amount" }, { id: "cur", type: "select", label: "l_cur", options: curOptions(), value: walletCur() },
+          { id: "due", type: "date", label: "l_due", value: today, future: true },
+          { id: "payFrom", type: "select", label: "l_payFrom", options: canW ? [opt("wallet", t("o_wallet")), opt("owner", t("o_owner"))] : [opt("owner", t("o_owner"))], value: canW ? "wallet" : "owner" });
+      }
+      if (money && mtype !== "Personal" && mneeds === "Owner must act" && D.prop.decisions) {
+        F.push({ id: "ask", type: "long", label: "l_ask", hint: "h_ask" }, { id: "rec", type: "long", label: "l_rec" });
+      }
+      F.push({ id: "did", type: "text", label: "l_did" }, { id: "minutes", type: "count", label: "l_minutes", hint: "h_minutes", value: init.mins || "" });
+    } else if (kind === "mail_update") {
+      var mu = findBy((D.mail || {}).open, init.row) || findBy((D.mail || {}).recent, init.row) || {};
+      F = [{ id: "status", type: "select", label: "l_mstatus", options: [opt("Open", tx("Open")), opt("Done", tx("Done"))], value: mu.status || "Open" },
+        { id: "original", type: "select", label: "l_original", options: MAIL_ORIGINAL.map(function (x) { return opt(x, tx(x)); }), value: mu.original || "At the house" },
+        { id: "did", type: "text", label: "l_did" }];
+      if (mu.type !== "Personal") { F.push({ id: "scan", type: "url", label: "l_scan", hint: "h_scan", value: mu.url || "" }); }
+      F.push({ id: "minutes", type: "count", label: "l_addMin" });
+    } else if (kind === "mail_check") {
+      F = [{ id: "counted", type: "count", label: "l_counted", hint: "h_counted" }, { id: "note", type: "text", label: "l_cnote", hint: "h_cnote" }];
+    } else if (kind === "mail_told") {
+      var tw = null;
+      for (i = 0; i < ((D.mail || {}).tell || []).length; i++) { if (String(D.mail.tell[i].row) === String(init.row)) { tw = D.mail.tell[i]; } }
+      var chans = (tw && tw.chans) || ["WhatsApp"];
+      F = [{ id: "told", type: "select", label: "l_told", options: chans.map(function (x) { return opt(x, tx(x)); }).concat(chans.length > 1 ? [opt(chans.join(", "), chans.map(tx).join(" + "))] : []), value: chans.join(", ") }];
     } else if (kind === "summary") {
       var kinds = (D.summary && D.summary.kinds) || [];
       F = [{ id: "kind", type: "select", label: "l_kind", options: kinds.map(function (x) { return opt(x, tx(x)); }), value: kinds[0] || "" },
@@ -1171,10 +1364,14 @@
     return F;
   }
 
+  function findSend(id) { var L = (S.data.mail || {}).sends || []; for (var i = 0; i < L.length; i++) { if (L[i].id === id) { return L[i]; } } return null; }
+  function findMail(row) { var M = S.data.mail || {}; return findBy(M.open, row) || findBy(M.recent, row); }
+
   function openForm(kind, arg) {
     var init = {};
     if (kind === "bill") { init.bill = arg || ""; }
-    if (kind === "paid" || kind === "act_update") { init.row = arg; }
+    if (kind === "paid" || kind === "act_update" || kind === "mail_update" || kind === "mail_told") { init.row = arg; }
+    if (kind === "mail" || kind === "mail_check") { init.send = arg || ""; init.started = Date.now(); }
     S.form = { kind: kind, init: init, vals: {}, bad: "", rid: "", again: false };
     go("form");
   }
@@ -1183,12 +1380,16 @@
     var f = S.form, D = S.data, sub = "";
     if (f.kind === "paid") { var b = findBy(D.bills, f.init.row); if (b) { sub = b.desc + " · " + money(b.amount, b.cur); } }
     if (f.kind === "act_update") { var a = findBy(D.items, f.init.row); if (a) { sub = sx(a.summary); } }
+    if (f.kind === "mail_update" || f.kind === "mail_told") { var mm = findMail(f.init.row); if (mm) { sub = mm.id + " · " + mm.from; } }
+    if ((f.kind === "mail_check" || f.kind === "mail") && f.init.send) { var ss = findSend(f.init.send); sub = f.init.send + (ss ? " · " + t("mPieces", { n: ss.pieces, p: ss.photos }) : ""); }
     return "<div class='wrap pad'><button type='button' class='back' data-act='back'>‹ " + esc(t("back")) + "</button><h1 class='title serif'>" + esc(t("f_" + f.kind)) + "</h1>" +
       "<p class='sub'>" + esc(D.prop.name) + (sub ? " · " + esc(sub) : "") + "</p>" + msgBox();
   }
 
   function formView() {
-    var f = S.form, F = fieldsFor(f.kind, Object.assign({}, f.init, f.vals)), h = formHead(), dis = S.busy ? " disabled" : "";
+    var f = S.form;
+    if (f.kind === "mail" && f.init.started && f.vals.minutes === undefined) { f.init.mins = String(Math.min(240, Math.max(1, Math.ceil((Date.now() - f.init.started) / 60000)))); }
+    var F = fieldsFor(f.kind, Object.assign({}, f.init, f.vals)), h = formHead(), dis = S.busy ? " disabled" : "";
     for (var i = 0; i < F.length; i++) {
       var x = F[i], id = "f_" + x.id, v = f.vals[x.id] !== undefined ? f.vals[x.id] : (x.value !== undefined ? x.value : ""), bad = f.bad === x.id ? " bad" : "";
       h += "<label class='l' for='" + id + "'>" + esc(t(x.label)) + "</label>";
@@ -1201,13 +1402,14 @@
         h += "<textarea class='" + bad.trim() + "' id='" + id + "' maxlength='1200'" + dis + ">" + esc(v) + "</textarea>";
       } else {
         var type = x.type === "date" ? "date" : (x.type === "url" ? "url" : "text");
-        h += "<input class='f" + bad + "' id='" + id + "' type='" + type + "'" + (x.type === "money" ? " inputmode='decimal'" : "") + (x.type === "date" && !x.future ? " max='" + esc(S.data.today) + "'" : "") +
+        h += "<input class='f" + bad + "' id='" + id + "' type='" + type + "'" + (x.type === "money" ? " inputmode='decimal'" : "") + (x.type === "count" ? " inputmode='numeric' maxlength='3'" : "") + (x.type === "date" && !x.future ? " max='" + esc(S.data.today) + "'" : "") +
           " autocomplete='off' maxlength='400' value='" + esc(v) + "'" + dis + ">";
       }
     }
     var waits = role() !== "Principal" && REVIEW[f.kind];
     var seen = f.kind === "summary" || f.kind === "act_add" || f.kind === "act_update" || f.kind === "decision" || f.kind === "bill" || f.kind === "paid";
-    h += "<p class='hint'>" + esc(waits ? t("sureQ") : (seen ? t("sure") : "")) + "</p>";
+    var seenM = f.kind === "mail" || f.kind === "mail_update";
+    h += "<p class='hint'>" + esc(waits ? t("sureQ") : (seen ? t("sure") : (seenM ? t("sureM") : ""))) + "</p>";
     if (f.again) { h += "<button type='button' class='btn gold' data-act='again'" + dis + ">" + esc(t("again")) + "</button>"; }
     h += "<button type='button' class='btn navy' data-act='submit'" + dis + ">" + esc(S.busy ? t("saving") : (waits ? t("send") : (f.kind === "summary" ? t("post") : t("save")))) + "</button>";
     return h + "</div>";
@@ -1238,9 +1440,17 @@
       data.wAmount = amountOf(v.wAmount);
     }
     if (f.kind === "act_update") { var a = findBy(D.items, f.init.row) || {}; data.row = a.row; data.summary = a.summary; }
+    var kindSent = f.kind;
+    if (f.kind === "mail") {
+      data.amount = amountOf(v.amount);
+      if (v.minutes === "" || v.minutes === undefined) { data.minutes = String(Math.min(240, Math.max(1, Math.ceil((Date.now() - (f.init.started || Date.now())) / 60000)))); }
+    }
+    if (f.kind === "mail_update") { var mu = findMail(f.init.row) || {}; data.row = mu.row; data.id = mu.id; }
+    if (f.kind === "mail_told") { var mt = findMail(f.init.row) || {}; kindSent = "mail_update"; data = { row: f.init.row, id: mt.id || "", told: v.told }; }
+    if (f.kind === "mail_check") { data.send = f.init.send; }
     if (!f.rid) { f.rid = newId(); }
     S.busy = true; S.msg = null; f.bad = ""; render();
-    post({ op: "t_do", tok: S.tok, p: S.code, kind: f.kind, data: data, rid: f.rid }, function (r) {
+    post({ op: "t_do", tok: S.tok, p: S.code, kind: kindSent, data: data, rid: f.rid }, function (r) {
       S.busy = false;
       if (signedOut(r)) { return; }
       take(r);
@@ -1264,7 +1474,8 @@
     for (var i = 0; i < notes.length; i++) {
       var parts = String(notes[i]).split(":"), key = "n_" + parts[0], x = parts.slice(1).join(":");
       if (T.en[key]) { lines.push(t(key, { x: x })); }
-      if (parts[0] !== "MATCH" && parts[0] !== "WHY_ITEM" && parts[0] !== "DECISION") { warn = true; }
+      if (parts[0] !== "MATCH" && parts[0] !== "WHY_ITEM" && parts[0] !== "DECISION" && parts[0] !== "MAIL_ID" && parts[0] !== "BILL_MADE" &&
+        parts[0] !== "BILL_QUEUED" && parts[0] !== "DECISION_QUEUED" && parts[0] !== "OFFICE_PAY" && parts[0] !== "OFFICE_ACT") { warn = true; }
     }
     return { key: "saved", kind: warn ? "warn" : "good", lines: lines };
   }
